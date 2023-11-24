@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,35 +13,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="255dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/purple_200">
 
-            <ImageView
-                android:layout_width="137dp"
-                android:layout_height="148dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/logo" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="한신대학교"
+                android:text="회원가입"
                 android:textColor="#ffffff"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="시간표 관리 도우미"
-                android:textColor="#ffffff"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
 
@@ -79,25 +64,63 @@
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
 
+            <EditText
+                android:id="@+id/emailText"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/purple_200"
+                android:drawableStart="@drawable/ic_baseline_mail_outline_24"
+                android:drawableLeft="@drawable/ic_baseline_mail_outline_24"
+                android:hint="이메일"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff" />
+            
+            <RadioGroup
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/genderGroup"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="여성"
+                    android:id="@+id/genderWoman"
+                    android:layout_weight="1"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="남성"
+                    android:id="@+id/genderMan"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+            <Spinner
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/majorSpinner"></Spinner>
+
             <Button
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@color/black"
-                android:text="로그인"
+                android:text="가입하기"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/registerButton"/>
 
-            <TextView
-                android:id="@+id/registerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="회원가입"
-                android:textSize="18dp" />
 
         </LinearLayout>
 
