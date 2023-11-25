@@ -88,7 +88,8 @@
                 android:text="로그인"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/loginButton"/>
 
             <TextView
                 android:id="@+id/registerButton"
@@ -98,6 +99,8 @@
                 android:layout_marginTop="10dp"
                 android:text="회원가입"
                 android:textSize="18dp" />
+
+
 
         </LinearLayout>
 
