@@ -84,4 +84,26 @@
         <item>마케팅사회조사학</item>
 
     </string-array>
+
+    <string-array name="year">
+        <item>2020년도</item>
+        <item>2021년도</item>
+        <item>2022년도</item>
+        <item>2023년도</item>
+    </string-array>
+
+    <string-array name="term">
+        <item>1학기</item>
+        <item>여름계절학기</item>
+        <item>2학기</item>
+        <item>겨울계절학기</item>
+    </string-array>
+    <string-array name="graduateArea">
+        <item>전공</item>
+    </string-array>
+    <string-array name="universityArea">
+        <item>교양</item>
+        <item>전공</item>
+    </string-array>
+    <!-- Reply Preference -->
 </resources>

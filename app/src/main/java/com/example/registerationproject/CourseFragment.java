@@ -1,12 +1,18 @@
 package com.example.registerationproject;
 
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CourseFragment extends Fragment {
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +31,7 @@ public class CourseFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public CourseFragment() {
         // Required empty public constructor
@@ -54,6 +63,52 @@ public class CourseFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+    private ArrayAdapter yearAdapter;
+    private Spinner yearSpinner;
+    private ArrayAdapter termAdapter;
+    private Spinner termSpinner;
+    private ArrayAdapter areaAdapter;
+    private Spinner areaSpinner;
+
+    private String courseUniversity = "";
+    private String courseYear = "";
+    private String courseTerm = "";
+    private String courseArea = "";
+
+
+    @Override
+    public void onActivityCreated(Bundle b){
+
+        super.onActivityCreated(b);
+
+        final RadioGroup courseUniversityGroup = getView().findViewById(R.id.courseUniversityGroup);
+        yearSpinner = getView().findViewById(R.id.yearSpinner);
+        termSpinner = getView().findViewById(R.id.termSpinner);
+        areaSpinner = getView().findViewById(R.id.areaSpinner);
+
+        courseUniversityGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                RadioButton courseButton = getView().findViewById(i);
+                courseUniversity = courseButton.getText().toString();
+
+                yearAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.year, android.R.layout.simple_spinner_dropdown_item);
+                yearSpinner.setAdapter(yearAdapter);
+
+                termAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.term, android.R.layout.simple_spinner_dropdown_item);
+                termSpinner.setAdapter(termAdapter);
+
+                if(courseUniversity.equals("학부")){
+
+                    areaAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.universityArea, android.R.layout.simple_spinner_dropdown_item);
+                    areaSpinner.setAdapter(areaAdapter);
+                }
+
+            }
+        });
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
