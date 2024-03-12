@@ -1,4 +1,4 @@
-package com.example.registerationproject;
+package com.example.registerationproject.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,8 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.registerationproject.ui.fragments.CalendarFragment;
+import com.example.registerationproject.ui.fragments.CommunityFragment;
+import com.example.registerationproject.ui.fragments.CourseFragment;
+import com.example.registerationproject.ui.fragments.GPSFragment;
+import com.example.registerationproject.Notice;
+import com.example.registerationproject.NoticeListAdapter;
+import com.example.registerationproject.R;
+import com.example.registerationproject.ui.fragments.ScheduleFragment;
+import com.example.registerationproject.ui.fragments.StatisticsFragment;
 
 import java.util.ArrayList;
 import java.util.List;

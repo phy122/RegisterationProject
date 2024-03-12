@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CalendarFragment">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.CalendarFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <CalendarView
         android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/todoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarView"
+        android:layout_marginTop="16dp"
+        android:hint="할일을 입력하세요"/>
+
+    <Button
+        android:id="@+id/addTodoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_below="@id/todoEditText"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp">
+        android:text="추가"/>
 
-    </CalendarView>
+    <ListView
+        android:id="@+id/todoListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addTodoButton"
+        android:layout_marginTop="16dp"/>
 
-</FrameLayout>
+</RelativeLayout>

@@ -16,4 +16,8 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="calendar_store">저장</string>
+    <string name="calendar_correction">수정</string>
+    <string name="key_1">내용을 입력하세요.</string>
+    <string name="calendar_delete">삭제</string>
 </resources>

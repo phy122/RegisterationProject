@@ -1,9 +1,7 @@
-package com.example.registerationproject;
+package com.example.registerationproject.ui.fragments;
 
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import com.example.registerationproject.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".ui.activity.RegisterActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,8 +24,8 @@
     <EditText
         android:id="@+id/et_register_id"
         android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="224dp"
         android:ems="10"
         android:hint=" E-mail"
         android:inputType="textEmailAddress"
@@ -38,7 +38,7 @@
     <EditText
         android:id="@+id/et_register_pw"
         android:layout_width="230dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint=" PASSWORD"
@@ -52,7 +52,7 @@
     <EditText
         android:id="@+id/et_register_name"
         android:layout_width="230dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint=" NAME"
@@ -127,7 +127,7 @@
     <EditText
         android:id="@+id/et_register_major"
         android:layout_width="230dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint=" MAJOR"

@@ -15,19 +15,19 @@
         android:enableOnBackInvokedCallback="true"
         >
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".ui.activity.MainActivity"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
