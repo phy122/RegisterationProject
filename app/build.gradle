@@ -51,6 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     def room_version ="2.3.0"
     implementation "androidx.room:room-runtime:$room_version"
+    implementation 'com.naver.maps:map-sdk:3.17.0'
     annotationProcessor "androidx.room:room-compiler:$room_version"
 }
 apply plugin: 'com.google.gms.google-services'

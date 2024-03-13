@@ -6,13 +6,9 @@
     tools:context=".ui.fragments.GPSFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <ImageView
+    <com.naver.maps.map.MapView
+        android:id="@+id/map_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/gps">
-
-
-    </ImageView>
+        android:layout_height="match_parent" />
 
 </FrameLayout>
