@@ -53,5 +53,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'com.naver.maps:map-sdk:3.17.0'
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'io.github.ParkSangGwon:tedpermission-rx3:3.3.0'
 }
 apply plugin: 'com.google.gms.google-services'

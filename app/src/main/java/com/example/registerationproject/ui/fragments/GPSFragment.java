@@ -1,144 +1,125 @@
 package com.example.registerationproject.ui.fragments;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.registerationproject.R;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
+import com.naver.maps.map.LocationTrackingMode;
+import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
-import com.naver.maps.map.NaverMapSdk;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.util.FusedLocationSource;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GPSFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class GPSFragment extends Fragment implements OnMapReadyCallback {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final int PERMISSION_REQUEST_CODE = 100;
+    private static final String[] PERMISSIONS = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+    };
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public GPSFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GPSFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GPSFragment newInstance(String param1, String param2) {
-        GPSFragment fragment = new GPSFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
     private MapView mapView;
-    private static NaverMap naverMap;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private NaverMap naverMap;
+    private FusedLocationSource locationSource;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_g_p_s, container, false);
-        // Inflate the layout for this fragment
-        //네이버 지도
-        mapView = view.findViewById(R.id.map_view);
+
+        mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
         return view;
     }
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
-
         this.naverMap = naverMap;
-        naverMap.setLayerGroupEnabled(naverMap.LAYER_GROUP_BUILDING, true);
 
+        // 위치 서비스 액세스 권한 요청
+        locationSource = new FusedLocationSource(this, PERMISSION_REQUEST_CODE);
+        requestLocationPermission();
+
+        // 현재 위치 표시 모드 설정
+        naverMap.setLocationSource(locationSource);
+        naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
+
+        // 초기 카메라 위치 설정
         CameraPosition cameraPosition = new CameraPosition(
-                new LatLng(33.38, 126.55),  // 위치 지정
-                12,                          // 줌 레벨
-                30,                          // 기울임 각도
-                45                           // 방향                          // 줌 레벨
+                new LatLng(37.5665, 126.9780), // 초기 위치는 서울로 설정할 수 있습니다.
+                16 // 줌 레벨
         );
         naverMap.setCameraPosition(cameraPosition);
     }
-    @Override
-    public void onStart()
-    {
-        String addr;
 
+    private void requestLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(),
+                    PERMISSIONS, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            if (locationSource.onRequestPermissionsResult(requestCode, permissions, grantResults)) {
+                if (!locationSource.isActivated()) {
+                    Toast.makeText(requireContext(), "위치 권한을 부여해야 현재 위치를 표시할 수 있습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onStart() {
         super.onStart();
         mapView.onStart();
     }
 
     @Override
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
         mapView.onResume();
     }
 
     @Override
-    public void onPause()
-    {
+    public void onPause() {
         super.onPause();
         mapView.onPause();
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-        mapView.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onStop()
-    {
+    public void onStop() {
         super.onStop();
         mapView.onStop();
     }
 
     @Override
-    public void onDestroyView()
-    {
+    public void onDestroyView() {
         super.onDestroyView();
         mapView.onDestroy();
     }
 
     @Override
-    public void onLowMemory()
-    {
+    public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
     }
