@@ -1,13 +1,18 @@
 package com.example.registerationproject.ui.activity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,6 +25,7 @@ import com.example.registerationproject.NoticeListAdapter;
 import com.example.registerationproject.R;
 import com.example.registerationproject.ui.fragments.ScheduleFragment;
 import com.example.registerationproject.ui.fragments.StatisticsFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private ListView noticeListView;
     private NoticeListAdapter adapter;
     private List<Notice> noticeList;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +55,91 @@ public class MainActivity extends AppCompatActivity {
         adapter = new NoticeListAdapter(getApplicationContext(), noticeList);
         noticeListView.setAdapter(adapter);
 
-        final Button courseButton = findViewById(R.id.courseButton);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 왼쪽 상단 버튼 만들기
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_dehaze_24); //왼쪽 상단 버튼 아이콘 지정
+
+        drawerLayout = findViewById(R.id.activity_main);
+        navigationView = (NavigationView)findViewById(R.id.navigation_view);
+
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                menuItem.setChecked(true);
+                drawerLayout.closeDrawers();
+                final LinearLayout notice = findViewById(R.id.notice);
+
+                int id = menuItem.getItemId();
+                String title = menuItem.getTitle().toString();
+
+                if(id == R.id.menu_course){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    CourseFragment courseFragment = new CourseFragment();
+                    fragmentTransaction.replace(R.id.fragment, courseFragment);
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 계정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.menu_statistics){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new StatisticsFragment());
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 설정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.menu_schedule){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new ScheduleFragment());
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.menu_calendar){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new CalendarFragment());
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.menu_community){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new CommunityFragment());
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
+                }
+                else if(id == R.id.menu_gps){
+                    notice.setVisibility(View.GONE);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new GPSFragment());
+                    fragmentTransaction.commit();
+                    //Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
+                }
+
+                return true;
+            }
+        });
+
+
+        /*final Button courseButton = findViewById(R.id.courseButton);
         final Button statisticButton = findViewById(R.id.statisticButton);
         final Button scheduleButton = findViewById(R.id.scheduleButton);
         final Button gpsButton = findViewById(R.id.gpsButton);
         final Button communityButton = findViewById(R.id.communityButton);
         final Button calendarButton = findViewById(R.id.calendarButton);
-        final LinearLayout notice = findViewById(R.id.notice);
+        final LinearLayout notice = findViewById(R.id.notice);*/
 
-        courseButton.setOnClickListener(new View.OnClickListener() {
+
+        /*courseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 notice.setVisibility(View.GONE);
@@ -158,23 +243,43 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment, new GPSFragment());
                 fragmentTransaction.commit();
             }
-        });
+        });*/
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ // 왼쪽 상단 버튼 눌렀을 때
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() { //뒤로가기 했을 때
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private long lastTimeBackPressed;
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (System.currentTimeMillis() - lastTimeBackPressed < 1500) {
-            finish();
-            return;
-        }
-        Toast.makeText(this, "'뒤로' 버튼을 한 번 더 눌러 종료합니다.", Toast.LENGTH_SHORT).show();
-        lastTimeBackPressed = System.currentTimeMillis();
-    }
+    //@Override
+    //public void onBackPressed() {
+      //  super.onBackPressed();
+        //if (System.currentTimeMillis() - lastTimeBackPressed < 1500) {
+          //  finish();
+            //return;
+        //}
+        //Toast.makeText(this, "'뒤로' 버튼을 한 번 더 눌러 종료합니다.", Toast.LENGTH_SHORT).show();
+        //lastTimeBackPressed = System.currentTimeMillis();
+    //}
 
 
 }

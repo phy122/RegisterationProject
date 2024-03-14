@@ -6,6 +6,27 @@
     tools:context=".ui.fragments.GPSFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnmark1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마커1"/>
+        <Button
+            android:id="@+id/btnmark2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마커2"/>
+        <Button
+            android:id="@+id/btnmark3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마커3"/>
+    </LinearLayout>
+
     <com.naver.maps.map.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
