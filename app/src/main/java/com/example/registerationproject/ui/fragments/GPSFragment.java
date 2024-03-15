@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,8 @@ import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.util.FusedLocationSource;
 
 public class GPSFragment extends Fragment implements OnMapReadyCallback {
@@ -34,17 +37,162 @@ public class GPSFragment extends Fragment implements OnMapReadyCallback {
     private NaverMap naverMap;
     private FusedLocationSource locationSource;
 
+    private Marker marker1 = new Marker();
+    private Marker marker2 = new Marker();
+    private Marker marker3 = new Marker();
+    private Marker marker4 = new Marker();
+    private Marker marker5 = new Marker();
+    private Marker marker6 = new Marker();
+    private Marker marker7 = new Marker();
+    private Marker marker8 = new Marker();
+    private Marker marker9 = new Marker();
+    private Marker marker10 = new Marker();
+    private Marker marker11 = new Marker();
+    private Marker marker12 = new Marker();
+
+    private Button btnMark1,btnMark2,btnMark3,btnMark4,btnMark5,btnMark6,btnMark7,btnMark8,btnMark9,btnMark10,btnMark11,btnMark12;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_g_p_s, container, false);
 
+
         mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+        btnMark1 = view.findViewById(R.id.btnmark1);
+        btnMark2 = view.findViewById(R.id.btnmark2);
+        btnMark3 = view.findViewById(R.id.btnmark3);
+        btnMark4 = view.findViewById(R.id.btnmark4);
+        btnMark5 = view.findViewById(R.id.btnmark5);
+        btnMark6 = view.findViewById(R.id.btnmark6);
+        btnMark7 = view.findViewById(R.id.btnmark7);
+        btnMark8 = view.findViewById(R.id.btnmark8);
+        btnMark9 = view.findViewById(R.id.btnmark9);
+        btnMark10 = view.findViewById(R.id.btnmark10);
+        btnMark11 = view.findViewById(R.id.btnmark11);
+        btnMark12 = view.findViewById(R.id.btnmark12);
+
+        btnMark1.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker1, 37.193515900000165, 127.02317886907377, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+
+        btnMark2.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker2, 37.19341076735539, 127.02378853577918, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark3.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker3, 37.192666099999, 127.02725644231066, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark4.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker4, 37.19406279999989, 127.0241712423097, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark5.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker5, 37.19298459999949, 127.0235913423098, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark6.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker6, 37.19312889999997, 127.02267844231021, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark7.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker7, 37.19350070000136, 127.02623714231125, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark8.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker8, 37.19382489999945, 127.02500894231025, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark9.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker9, 37.19415080000044, 127.02208194230982, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark10.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker10, 37.194193499998505, 127.0198019423099, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark11.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker11, 37.194185200000156, 127.02260544231315, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+        btnMark12.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                setMarker(marker12, 37.19360280000055, 127.02127174231111, R.drawable.ic_baseline_place_24, 10);
+            }
+        });
+
         return view;
     }
+
+    private void setMarker(Marker marker,  double lat, double lng, int resourceID, int zIndex)
+    {
+        //원근감 표시
+        marker.setIconPerspectiveEnabled(true);
+        //아이콘 지정
+        marker.setIcon(OverlayImage.fromResource(resourceID));
+        //마커의 투명도
+        marker.setAlpha(0.8f);
+        //마커 위치
+        marker.setPosition(new LatLng(lat, lng));
+        //마커 우선순위
+        marker.setZIndex(zIndex);
+        //마커 표시
+        marker.setMap(naverMap);
+    }
+
+
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
@@ -60,7 +208,7 @@ public class GPSFragment extends Fragment implements OnMapReadyCallback {
 
         // 초기 카메라 위치 설정
         CameraPosition cameraPosition = new CameraPosition(
-                new LatLng(37.5665, 126.9780), // 초기 위치는 서울로 설정할 수 있습니다.
+                new LatLng( 37.193542073879996, 127.02249811222823), // 초기 위치는 서울로 설정할 수 있습니다.
                 16 // 줌 레벨
         );
         naverMap.setCameraPosition(cameraPosition);
