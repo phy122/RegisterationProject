@@ -1,36 +1,49 @@
-/*
 package com.example.registerationproject.models;
 
 public class Post {
-    public String uid;
-    public String author;
-    public String title;
-    public String body;
-    public int starCount = 0;
-    public Map<String, Boolean> stars = new HashMap<>();
+    private String title;
+    private String content;
+    private int likes;
 
     public Post() {
-        // Default constructor required for calls to DataSnapshot.getValue(Post.class)
+        // Default constructor required for Firestore
     }
 
-    public Post(String uid, String author, String title, String body) {
-        this.uid = uid;
-        this.author = author;
+    public Post(String title, String content) {
         this.title = title;
-        this.body = body;
+        this.content = content;
+        this.likes = 0; // 초기 좋아요 수는 0으로 설정
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", uid);
-        result.put("author", author);
-        result.put("title", title);
-        result.put("body", body);
-        result.put("starCount", starCount);
-        result.put("stars", stars);
+    // Getters and setters
 
-        return result;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public void increaseLikes() {
+        likes++;
     }
 }
-*/
+
+

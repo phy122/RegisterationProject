@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Define toolbar style -->
+        <item name="toolbarStyle">@style/AppToolbarStyle</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="AppToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <!-- Customize your toolbar style here. -->
+        <item name="android:background">@color/toolbar_background_color</item>
+        <item name="android:titleTextAppearance">@style/ToolbarTitleTextAppearance</item>
+    </style>
+
+    <!-- Toolbar Title Text Appearance -->
+    <style name="ToolbarTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!-- Customize your title text appearance here. -->
+        <item name="android:textColor">@color/toolbar_title_color</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>
