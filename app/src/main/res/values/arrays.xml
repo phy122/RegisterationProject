@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="major">
+        <item>기타</item>
         <item>AI SW계열</item>
         <item>IT경영학과</item>
         <item>IT영상콘텐츠학과</item>
@@ -85,25 +86,182 @@
 
     </string-array>
 
-    <string-array name="year">
-        <item>2020년도</item>
-        <item>2021년도</item>
-        <item>2022년도</item>
-        <item>2023년도</item>
+    <string-array name="grade">
+        <item>기타</item>
+        <item>1학년</item>
+        <item>2학년</item>
+        <item>3학년</item>
+        <item>4학년</item>
+        <item>기타</item>
     </string-array>
 
-    <string-array name="term">
-        <item>1학기</item>
-        <item>여름계절학기</item>
-        <item>2학기</item>
-        <item>겨울계절학기</item>
+    <string-array name="division">
+        <item>기타</item>
+        <item>교필</item>
+        <item>교선</item>
+        <item>전선</item>
+        <item>전필</item>
+        <item>계공</item>
+        <item>공선</item>
+        <item>학석</item>
+        <item>평생</item>
+        <item>일선</item>
     </string-array>
-    <string-array name="graduateArea">
-        <item>전공</item>
+
+    <string-array name="credit">
+        <item>기타</item>
+        <item>0학점</item>
+        <item>0.5학점</item>
+        <item>1학점</item>
+        <item>1.5학점</item>
+        <item>2학점</item>
+        <item>2.5학점</item>
+        <item>3학점</item>
+        <item>3.5학점</item>
+        <item>4학점 이상</item>
     </string-array>
-    <string-array name="universityArea">
-        <item>교양</item>
-        <item>전공</item>
+
+    <string-array name="professor">
+        <item>강남훈</item>
+        <item>강명구</item>
+        <item>강민구</item>
+        <item>강석원</item>
+        <item>강아람</item>
+        <item>강영경</item>
+        <item>강윤형</item>
+        <item>강은미</item>
+        <item>강인철</item>
+        <item>강인학</item>
+        <item>강지연</item>
+        <item>강지희</item>
+        <item>강혁</item>
+        <item>강현</item>
+        <item>강형모</item>
+        <item>계광수</item>
+        <item>고기영</item>
+        <item>고우경</item>
+        <item>공주형</item>
+        <item>구훈정</item>
+        <item>권오용</item>
+        <item>김경민</item>
+        <item>김계자</item>
+        <item>김권수</item>
+        <item>김기주</item>
+        <item>김나영</item>
+        <item>김남희</item>
+        <item>김대수</item>
+        <item>김대숙</item>
+        <item>김대오</item>
+        <item>김도희</item>
+        <item>김동심</item>
+        <item>김민수</item>
+        <item>김민환</item>
+        <item>김병조</item>
+        <item>김보경</item>
+        <item>김상욱</item>
+        <item>김상원</item>
+        <item>김선형</item>
+        <item>김성기</item>
+        <item>김성언</item>
+        <item>김수겸</item>
+        <item>김수영</item>
+        <item>김수현</item>
+        <item>김애영</item>
+        <item>김연숙</item>
+        <item>김영재</item>
+        <item>김영주</item>
+        <item>김예랑</item>
+        <item>김용표</item>
+        <item>김용훈</item>
+        <item>김용희</item>
+        <item>김유신</item>
+        <item>김유진</item>
+        <item>김윤성</item>
+        <item>김윤정</item>
+        <item>김은영</item>
+        <item>김인선</item>
+        <item>김정수</item>
+        <item>김주한</item>
+        <item>김준현</item>
+        <item>김지혜</item>
+        <item>김지혜</item>
+        <item>김창주</item>
+        <item>김한상</item>
+        <item>김항섭</item>
+        <item>김현경</item>
+        <item>김형철</item>
+        <item>김혜련</item>
+        <item>김혜성</item>
+        <item>김혜진</item>
+        <item>김환희</item>
+        <item>김흥기</item>
+        <item>김희선</item>
+        <item>김희정</item>//
+        <item>강윤형</item>
+        <item>강은미</item>
+        <item>강인철</item>
+        <item>강인학</item>
+        <item>강지연</item>
+        <item>강지희</item>
+        <item>강혁</item>
+        <item>강현</item>
+        <item>강형모</item>
+        <item>계광수</item>
+        <item>고기영</item>
+        <item>고우경</item>
+        <item>공주형</item>
+        <item>구훈정</item>
+        <item>권오용</item>
+        <item>김경민</item>
+        <item>김계자</item>
+        <item>김권수</item>
+        <item>김기주</item>
+        <item>김나영</item>
+        <item>김남희</item>
+        <item>김대수</item>
+        <item>김대숙</item>
+        <item>김대오</item>
+        <item>김도희</item>
+        <item>김동심</item>
+        <item>김민수</item>
+        <item>김민환</item>
+        <item>김병조</item>
+        <item>김보경</item>
+        <item>김상욱</item>
+        <item>김상원</item>
+        <item>김선형</item>
+        <item>김성기</item>
+        <item>김성언</item>
+        <item>김수겸</item>
+        <item>김수영</item>
+        <item>김수현</item>
+        <item>김애영</item>
+        <item>김연숙</item>
+        <item>김영재</item>
+        <item>김영주</item>
+        <item>김예랑</item>
+        <item>김용표</item>
+        <item>김용훈</item>
+        <item>김용희</item>
+        <item>김유신</item>
+        <item>김유진</item>
+        <item>김윤성</item>
+        <item>김윤정</item>
+        <item>김은영</item>
+        <item>김인선</item>
+        <item>김정수</item>
+        <item>김주한</item>
+        <item>김준현</item>
+        <item>김지혜</item>
+        <item>김지혜</item>
+        <item>김창주</item>
+        <item>김한상</item>
+        <item>김항섭</item>
+        <item>김현경</item>
+        <item>김형철</item>
+        <item>김혜련</item>
+
     </string-array>
+
     <!-- Reply Preference -->
 </resources>

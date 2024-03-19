@@ -1,119 +1,202 @@
 package com.example.registerationproject.ui.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.registerationproject.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CourseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class CourseFragment extends Fragment {
 
+    private Spinner gradeSpinner, divisionSpinner, creditSpinner, majorSpinner, professorSpinner;
 
+    private ArrayAdapter<String> gradeAdapter, divisionAdapter, creditAdapter, majorAdapter, professorAdapter;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FirebaseFirestore db;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private ListView courseListView;
 
     public CourseFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CourseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CourseFragment newInstance(String param1, String param2) {
-        CourseFragment fragment = new CourseFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Initialize Firebase Firestore
+        db = FirebaseFirestore.getInstance();
     }
-
-    private ArrayAdapter yearAdapter;
-    private Spinner yearSpinner;
-    private ArrayAdapter termAdapter;
-    private Spinner termSpinner;
-    private ArrayAdapter areaAdapter;
-    private Spinner areaSpinner;
-
-    private String courseUniversity = "";
-    private String courseYear = "";
-    private String courseTerm = "";
-    private String courseArea = "";
-
-
-    @Override
-    public void onActivityCreated(Bundle b){
-
-        super.onActivityCreated(b);
-
-        final RadioGroup courseUniversityGroup = getView().findViewById(R.id.courseUniversityGroup);
-        yearSpinner = getView().findViewById(R.id.yearSpinner);
-        termSpinner = getView().findViewById(R.id.termSpinner);
-        areaSpinner = getView().findViewById(R.id.areaSpinner);
-
-        courseUniversityGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int i) {
-                RadioButton courseButton = getView().findViewById(i);
-                courseUniversity = courseButton.getText().toString();
-
-                yearAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.year, android.R.layout.simple_spinner_dropdown_item);
-                yearSpinner.setAdapter(yearAdapter);
-
-                termAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.term, android.R.layout.simple_spinner_dropdown_item);
-                termSpinner.setAdapter(termAdapter);
-
-                if(courseUniversity.equals("학부")){
-
-                    areaAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.universityArea, android.R.layout.simple_spinner_dropdown_item);
-                    areaSpinner.setAdapter(areaAdapter);
-                }
-
-            }
-        });
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_course, container, false);
+
+        courseListView = view.findViewById(R.id.courseListView);
+
+        gradeSpinner = view.findViewById(R.id.gradeSpinner);
+        divisionSpinner = view.findViewById(R.id.divisionSpinner);
+        creditSpinner = view.findViewById(R.id.creditSpinner);
+        majorSpinner = view.findViewById(R.id.majorSpinner);
+        professorSpinner = view.findViewById(R.id.professorSpinner);
+
+        // majorSpinner에 아이템 추가
+        ArrayAdapter<CharSequence> majorAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.major, android.R.layout.simple_spinner_item);
+        majorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        majorSpinner.setAdapter(majorAdapter);
+
+        // gradeSpinner에 아이템 추가
+        ArrayAdapter<CharSequence> gradeAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.grade, android.R.layout.simple_spinner_item);
+        gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gradeSpinner.setAdapter(gradeAdapter);
+
+        // divisionSpinner에 아이템 추가
+        ArrayAdapter<CharSequence> divisionAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.division, android.R.layout.simple_spinner_item);
+        divisionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        divisionSpinner.setAdapter(divisionAdapter);
+
+        // creditSpinner에 아이템 추가
+        ArrayAdapter<CharSequence> creditAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.credit, android.R.layout.simple_spinner_item);
+        creditAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        creditSpinner.setAdapter(creditAdapter);
+
+        // 교수명 스피너에 아이템 추가
+        ArrayAdapter<CharSequence> professorAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.professor, android.R.layout.simple_spinner_item);
+        professorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        professorSpinner.setAdapter(professorAdapter);
+
+        // 스피너 값 변경 이벤트 리스너 설정
+        setSpinnerListeners();
+
+        return view;
+    }
+
+    private void searchCourses() {
+        // 사용자가 선택한 값들을 가져옴
+        String selectedGrade = gradeSpinner.getSelectedItem().toString();
+        String selectedDivision = divisionSpinner.getSelectedItem().toString();
+        String selectedCredit = creditSpinner.getSelectedItem().toString();
+        String selectedMajor = majorSpinner.getSelectedItem().toString();
+        String selectedProfessor = professorSpinner.getSelectedItem().toString();
+
+        // Firestore에서 강의를 검색하여 결과를 표시하는 코드
+        db.collection("courses")
+                .whereEqualTo("grade", selectedGrade)
+                .whereEqualTo("division", selectedDivision)
+                .whereEqualTo("credit", selectedCredit)
+                .whereEqualTo("major", selectedMajor)
+                .whereEqualTo("professor", selectedProfessor) // 교수명 추가
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<String> courseList = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // 강의 정보를 가져와서 리스트에 추가
+                                String courseName = document.getString("name");
+                                courseList.add(courseName);
+                            }
+                            // 검색 결과를 리스트뷰에 표시
+                            displaySearchResults(courseList);
+                        } else {
+                            // 검색 실패 시 처리
+                            showToast("검색에 실패했습니다. 다시 시도해주세요.");
+                        }
+                    }
+                });
+    }
+
+    private void setSpinnerListeners() {
+        // 각 스피너의 선택 여부를 확인하고 선택된 값이 있는 경우에만 검색을 수행하도록 설정
+        majorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                searchCourses();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Nothing to do
+            }
+        });
+
+        gradeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                searchCourses();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Nothing to do
+            }
+        });
+
+        divisionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                searchCourses();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Nothing to do
+            }
+        });
+
+        creditSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                searchCourses();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Nothing to do
+            }
+        });
+
+        professorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                searchCourses();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Nothing to do
+            }
+        });
+    }
+
+    private void displaySearchResults(List<String> courseList) {
+        // 검색 결과를 리스트뷰에 표시하는 코드
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, courseList);
+        courseListView.setAdapter(adapter);
+    }
+
+    private void showToast(String message) {
+        // 사용자에게 토스트 메시지로 알림을 표시하는 코드
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
