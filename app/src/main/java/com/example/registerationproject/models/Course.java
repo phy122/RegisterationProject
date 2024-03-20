@@ -1,38 +1,40 @@
+// Course.java
+
 package com.example.registerationproject.models;
 
 import com.google.firebase.firestore.PropertyName;
 
 public class Course {
 
-    private String name;
+    private String course;
     private String grade;
     private String division;
     private String credit;
     private String major;
-    private String professor; // 교수 이름 필드 추가
+    private String professor;
 
     // Default constructor (required by Firestore)
     public Course() {}
 
     // Constructor with parameters
-    public Course(String name, String grade, String division, String credit, String major, String professor) {
-        this.name = name;
+    public Course(String course, String grade, String division, String credit, String major, String professor) {
+        this.course = course;
         this.grade = grade;
         this.division = division;
         this.credit = credit;
         this.major = major;
-        this.professor = professor; // 생성자에도 교수 이름 추가
+        this.professor = professor;
     }
 
     // Getters and setters for each field
-    @PropertyName("name")
-    public String getName() {
-        return name;
+    @PropertyName("course")
+    public String getCourse() {
+        return course;
     }
 
-    @PropertyName("name")
-    public void setName(String name) {
-        this.name = name;
+    @PropertyName("course")
+    public void setCourse(String course) {
+        this.course = course;
     }
 
     @PropertyName("grade")
@@ -75,12 +77,12 @@ public class Course {
         this.major = major;
     }
 
-    @PropertyName("professor") // 교수 이름을 위한 어노테이션 추가
+    @PropertyName("professor")
     public String getProfessor() {
         return professor;
     }
 
-    @PropertyName("professor") // 교수 이름을 위한 어노테이션 추가
+    @PropertyName("professor")
     public void setProfessor(String professor) {
         this.professor = professor;
     }

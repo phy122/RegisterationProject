@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="major">
-        <item>기타</item>
+        <item>전공선택</item>
         <item>AI SW계열</item>
         <item>IT경영학과</item>
         <item>IT영상콘텐츠학과</item>
@@ -87,7 +87,7 @@
     </string-array>
 
     <string-array name="grade">
-        <item>기타</item>
+        <item>학년선택</item>
         <item>1학년</item>
         <item>2학년</item>
         <item>3학년</item>
@@ -96,7 +96,7 @@
     </string-array>
 
     <string-array name="division">
-        <item>기타</item>
+        <item>구분선택</item>
         <item>교필</item>
         <item>교선</item>
         <item>전선</item>
@@ -109,7 +109,7 @@
     </string-array>
 
     <string-array name="credit">
-        <item>기타</item>
+        <item>학점선택</item>
         <item>0학점</item>
         <item>0.5학점</item>
         <item>1학점</item>
@@ -121,7 +121,22 @@
         <item>4학점 이상</item>
     </string-array>
 
+    <string-array name="course">
+        <item>강의선택</item>
+        <item>운영체제</item>
+        <item>컴퓨터네트워크</item>
+        <item>유닉스시스템</item>
+        <item>1학점</item>
+        <item>1.5학점</item>
+        <item>2학점</item>
+        <item>2.5학점</item>
+        <item>3학점</item>
+        <item>3.5학점</item>
+        <item>4학점 이상</item>
+    </string-array>
+
     <string-array name="professor">
+        <item>교수선택</item>
         <item>강남훈</item>
         <item>강명구</item>
         <item>강민구</item>
@@ -197,69 +212,247 @@
         <item>김흥기</item>
         <item>김희선</item>
         <item>김희정</item>//
-        <item>강윤형</item>
-        <item>강은미</item>
-        <item>강인철</item>
-        <item>강인학</item>
-        <item>강지연</item>
-        <item>강지희</item>
-        <item>강혁</item>
-        <item>강현</item>
-        <item>강형모</item>
-        <item>계광수</item>
-        <item>고기영</item>
-        <item>고우경</item>
-        <item>공주형</item>
-        <item>구훈정</item>
-        <item>권오용</item>
-        <item>김경민</item>
-        <item>김계자</item>
-        <item>김권수</item>
-        <item>김기주</item>
-        <item>김나영</item>
-        <item>김남희</item>
-        <item>김대수</item>
-        <item>김대숙</item>
-        <item>김대오</item>
-        <item>김도희</item>
-        <item>김동심</item>
-        <item>김민수</item>
-        <item>김민환</item>
-        <item>김병조</item>
-        <item>김보경</item>
-        <item>김상욱</item>
-        <item>김상원</item>
-        <item>김선형</item>
-        <item>김성기</item>
-        <item>김성언</item>
-        <item>김수겸</item>
-        <item>김수영</item>
-        <item>김수현</item>
-        <item>김애영</item>
-        <item>김연숙</item>
-        <item>김영재</item>
-        <item>김영주</item>
-        <item>김예랑</item>
-        <item>김용표</item>
-        <item>김용훈</item>
-        <item>김용희</item>
-        <item>김유신</item>
-        <item>김유진</item>
-        <item>김윤성</item>
-        <item>김윤정</item>
-        <item>김은영</item>
-        <item>김인선</item>
-        <item>김정수</item>
-        <item>김주한</item>
-        <item>김준현</item>
-        <item>김지혜</item>
-        <item>김지혜</item>
-        <item>김창주</item>
-        <item>김한상</item>
-        <item>김항섭</item>
-        <item>김현경</item>
-        <item>김형철</item>
-        <item>김혜련</item>
+        <item>나경욱</item>
+        <item>나근식</item>
+        <item>나카무라 모모코</item>
+        <item>나현기</item>
+        <item>남궁혜영</item>
+        <item>남혜지</item>
+        <item>노승철</item>
+        <item>노중기</item>
+        <item>노태경</item>
+        <item>도키와유코</item>
+        <item>류근환</item>
+        <item>류기수</item>
+        <item>류성민</item>
+        <item>류승택</item>
+        <item>류장현</item>
+        <item>류재향</item>
+        <item>메튜</item>
+        <item>명왕성</item>
+        <item>모리스</item>
+        <item>목승혜</item>
+        <item>문미진</item>
+        <item>문주형</item>
+        <item>문철수</item>
+        <item>박규호</item>
+        <item>박기현</item>
+        <item>박시홍</item>
+        <item>박동련</item>
+        <item>박미선</item>
+        <item>박미영</item>
+        <item>박민하</item>
+        <item>박상남</item>
+        <item>박상준</item>
+        <item>박상현</item>
+        <item>박상현</item>
+        <item>박서재</item>
+        <item>박선화</item>
+        <item>박성진</item>
+        <item>박영현</item>
+        <item>박재형</item>
+        <item>박종현</item>
+        <item>박현욱</item>
+        <item>박현준</item>
+        <item>박혜영</item>
+        <item>발렌틴 안더르트</item>
+        <item>배현주</item>
+        <item>백변경희</item>
+        <item>백상현</item>
+        <item>백수린</item>
+        <item>백수진</item>
+        <item>백승택</item>
+        <item>백준기</item>
+        <item>서강목</item>
+        <item>서경희</item>
+        <item>서동미</item>
+        <item>서영화</item>
+        <item>서정욱</item>
+        <item>성락선</item>
+        <item>성은실</item>
+        <item>손승일</item>
+        <item>손정현</item>
+        <item>송주명</item>
+        <item>송주현</item>
+        <item>신광철</item>//
+        <item>신남미</item>
+        <item>신정아</item>
+        <item>심동수</item>
+        <item>심주연</item>
+        <item>심혜경</item>
+        <item>안건호</item>
+        <item>안도연</item>
+        <item>안현</item>
+        <item>야니</item>
+        <item>양영수</item>
+        <item>양우진</item>
+        <item>양춘우</item>
+        <item>연규홍</item>
+        <item>연제호</item>
+        <item>염건</item>
+        <item>염동호</item>
+        <item>오동식</item>
+        <item>오미정</item>
+        <item>오윤식</item>
+        <item>오창호</item>
+        <item>오현숙</item>
+        <item>옥장흠</item>
+        <item>유동석</item>
+        <item>유문선</item>
+        <item>유순혜</item>
+        <item>유영국</item>
+        <item>유예원</item>
+        <item>유은하</item>
+        <item>유재미</item>
+        <item>유한나</item>
+        <item>유한나</item>
+        <item>유현미</item>
+        <item>유형동</item>
+        <item>윤건</item>
+        <item>윤상철</item>
+        <item>윤정희</item>
+        <item>윤효석</item>
+        <item>이건범</item>
+        <item>이경숙</item>
+        <item>이경옥</item>
+        <item>이경호</item>
+        <item>이남연</item>
+        <item>이문교</item>
+        <item>이미선</item>
+        <item>이미선</item>
+        <item>이미애</item>
+        <item>이상철</item>
+        <item>이상헌</item>
+        <item>이서영</item>
+        <item>이석민</item>
+        <item>이성구</item>
+        <item>이성현</item>
+        <item>이수호</item>
+        <item>아승원</item>
+        <item>이승천</item>
+        <item>이시연</item>
+        <item>이아름</item>
+        <item>이아영</item>
+        <item>이양선</item>
+        <item>이영남</item>
+        <item>이영미</item>
+        <item>이영수</item>
+        <item>이영화</item>
+        <item>이영훈</item>
+        <item>이용걸</item>
+        <item>이원철</item>
+        <item>이유철</item>
+        <item>이윤우</item>
+        <item>이은선</item>
+        <item>이은영</item>
+        <item>이은정</item>
+        <item>이은주</item>
+        <item>이익주</item>
+        <item>이인재</item>
+        <item>이일영</item>
+        <item>이재혁</item>
+        <item>이종운</item>
+        <item>이종철</item>
+        <item>이종현</item>
+        <item>이찬행</item>
+        <item>이창익</item>
+        <item>이해영</item>
+        <item>이향미</item>
+        <item>이혁상</item>
+        <item>이형우</item>
+        <item>이형원</item>
+        <item>이혜원</item>
+        <item>이호규</item>
+        <item>임익수</item>
+        <item>임지은</item>
+        <item>장순택</item>
+        <item>장용식</item>
+        <item>장우현</item>
+        <item>장익현</item>
+        <item>장재건</item>
+        <item>장정해</item>
+        <item>장종익</item>
+        <item>정창준</item>
+        <item>장해라</item>//
+        <item>전병유</item>
+        <item>전창환</item>
+        <item>전춘명</item>
+        <item>정근희</item>
+        <item>정기현</item>
+        <item>정동진</item>
+        <item>정무용</item>
+        <item>정선아</item>
+        <item>정승민</item>
+        <item>정양헌</item>
+        <item>정예수</item>
+        <item>정용택</item>
+        <item>정윤재</item>
+        <item>정의범</item>
+        <item>정의성</item>
+        <item>정일건</item>
+        <item>정재웅</item>
+        <item>정지영</item>
+        <item>정춘</item>
+        <item>정태성</item>
+        <item>정한아</item>
+        <item>정해득</item>
+        <item>정희진</item>
+        <item>제갈현숙</item>
+        <item>조규청</item>
+        <item>조문신</item>
+        <item>조민지</item>
+        <item>조성호</item>
+        <item>조영원</item>
+        <item>조현석</item>
+        <item>조현진</item>
+        <item>추경희</item>
+        <item>지원배</item>
+        <item>진연</item>
+        <item>진형섭</item>
+        <item>차성덕</item>
+        <item>차영숙</item>
+        <item>차윤정</item>
+        <item>채수원</item>
+        <item>채희상</item>
+        <item>최명일</item>
+        <item>최미호</item>
+        <item>최민성</item>
+        <item>최승희</item>
+        <item>최영호</item>
+        <item>최영훈</item>
+        <item>최은경</item>
+        <item>최정규</item>
+        <item>최종태</item>
+        <item>최지나</item>
+        <item>최지환</item>
+        <item>최창원</item>
+        <item>최천식</item>
+        <item>최현실</item>
+        <item>최형익</item>
+        <item>최환진</item>
+        <item>하지영</item>
+        <item>한강희</item>
+        <item>한광희</item>
+        <item>한근식</item>
+        <item>한재명</item>
+        <item>한정미</item>
+        <item>한정재</item>
+        <item>함예재</item>
+        <item>허태윤</item>
+        <item>홍덕표</item>
+        <item>홍선미</item>
+        <item>홍성찬</item>
+        <item>홍승진</item>
+        <item>홍용덕</item>
+        <item>홍원의</item>
+        <item>홍정은</item>
+        <item>홍창기</item>
+        <item>황선미</item>
+        <item>황수영</item>
+        <item>LUCIER PETER</item>
+        <item>OCU컨소시엄</item>
+        <item>PANG LI</item>
+
 
     </string-array>
 

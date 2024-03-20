@@ -17,17 +17,23 @@
 
         <Spinner
             android:id="@+id/gradeSpinner"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginLeft="20dp" />
 
         <Spinner
             android:id="@+id/divisionSpinner"
-            android:layout_width="150dp"
+            android:layout_width= "110dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="20dp" />
+        <Spinner
+            android:id="@+id/creditSpinner"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp" />
 
     </LinearLayout>
 
@@ -40,18 +46,18 @@
         android:paddingRight="10dp">
 
         <Spinner
-            android:id="@+id/creditSpinner"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/courseSpinner"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginLeft="10dp" />
 
         <Spinner
             android:id="@+id/professorSpinner"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="20dp" />
 
     </LinearLayout>
 
@@ -88,17 +94,18 @@
     <!-- 검색 결과를 표시할 리스트뷰 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="#ffffff">
 
-        <ListView
-            android:id="@+id/courseListView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="#ffffff"
-            android:dividerHeight="10dp" />
-
     </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/courseListView"
+        android:layout_margin="10dp"
+        android:dividerHeight="10dp"
+        android:divider="#ffffff"></ListView>
 
 </LinearLayout>
