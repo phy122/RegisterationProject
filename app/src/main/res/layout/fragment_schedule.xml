@@ -1,764 +1,1113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ScheduleFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
 
-    <TableLayout
+    <LinearLayout
+        android:id="@+id/linearLayout_timetable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TableRow
+        <GridLayout
+            android:id="@+id/gridlayout_timetable"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/purple_500">
+            android:layout_height="wrap_content"
+            android:columnCount="6"
+            android:rowCount="18"
+            android:layout_marginBottom="55dp"
+            android:orientation="horizontal">
+
+            <!-- 빈 셀 -->
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:textSize="20dp"
+                android:text="시간"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <!-- 요일 표시 -->
+            <TextView
+                android:layout_columnWeight="2"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="월"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
 
             <TextView
+                android:layout_columnWeight="2"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="화"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="2"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="수"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="2"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="목"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="2"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="금"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <!-- 시간대 표시 -->
+            <!-- 09:00부터 18:00까지 1시간 간격으로 표시 -->
+            <!-- 예시로 3시간만 표시함 -->
+            <!-- 월요일 -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text="09:30"
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:text=""
-                android:layout_width="wrap_content"
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday0930courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday0930courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday0930courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday0930courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday0930courseInfoTextView"/>
+
+            <!-- 10:00 -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text="10:45"
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1045courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1045courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1045courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1045courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1045courseInfoTextView"/>
+
+            <!-- 11:00 -->
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="Break time"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/mondaybreaktimecourseInfoTextView1"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesdaybreaktimecourseInfoTextView1"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesdaybreaktimecourseInfoTextView1"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursdaybreaktimecourseInfoTextView1"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/fridaybreaktimecourseInfoTextView1"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"/>
+                android:text="11:00"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1100courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1100courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1100courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1100courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1100courseInfoTextView"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:text="12:15"
+                android:textColor="@color/black"/>
+
             <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1215courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1215courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1215courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1215courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1215courseInfoTextView"/>
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"/>
+                android:text="Break time"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
             <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/mondaybreaktimecourseInfoTextView2"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesdaybreaktimecourseInfoTextView2"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesdaybreaktimecourseInfoTextView2"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursdaybreaktimecourseInfoTextView2"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/fridaybreaktimecourseInfoTextView2"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:text="13:00"
+                android:textColor="@color/black"/>
+
             <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1300courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1300courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1300courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1300courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1300courseInfoTextView"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:text="14:15"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="9"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
-
-            <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday1"/>
+                android:textColor="@color/black"
+                android:id="@+id/monday1415courseInfoTextView"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday1"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday1"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday1"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday1"/>
-        </TableRow>
-
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1415courseInfoTextView"/>
 
             <TextView
-                android:text="10"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1415courseInfoTextView"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday2"/>
+                android:textColor="@color/black"
+                android:id="@+id/thursday1415courseInfoTextView"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday2"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday2"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday2"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday2"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/friday1415courseInfoTextView"/>
 
             <TextView
-                android:text="11"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="Break time"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday3"/>
+                android:textColor="@color/black"
+                android:id="@+id/mondaybreaktimecourseInfoTextView3"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday3"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday3"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday3"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday3"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/tuesdaybreaktimecourseInfoTextView3"/>
 
             <TextView
-                android:text="12"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesdaybreaktimecourseInfoTextView3"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursdaybreaktimecourseInfoTextView3"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/fridaybreaktimecourseInfoTextView3"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="14:30"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday4"/>
+                android:textColor="@color/black"
+                android:id="@+id/monday1430courseInfoTextView"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday4"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday4"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday4"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday4"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1430courseInfoTextView"/>
 
             <TextView
-                android:text="1"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1430courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1430courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1430courseInfoTextView"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:textSize="20dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="15:45"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday5"/>
+                android:textColor="@color/black"
+                android:id="@+id/monday1545courseInfoTextView"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday5"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday5"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday5"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday5"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1545courseInfoTextView"/>
 
             <TextView
-                android:text="2"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1545courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1545courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1545courseInfoTextView"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:textSize="20dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="Break time"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday6"/>
+                android:textColor="@color/black"
+                android:id="@+id/mondaybreaktimecourseInfoTextView4"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday6"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday6"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday6"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday6"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+                android:textColor="@color/black"
+                android:id="@+id/tuesdaybreaktimecourseInfoTextView4"/>
 
             <TextView
-                android:text="3"
-                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesdaybreaktimecourseInfoTextView4"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursdaybreaktimecourseInfoTextView4"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/fridaybreaktimecourseInfoTextView4"/>
+
+            <TextView
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
-
-            <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:textSize="20dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday7"/>
+                android:text="16:00"
+                android:textColor="@color/black"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday7"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday7"/>
-
-            <TextView
-                android:id="@+id/thursday7"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:background="@drawable/cell_shape"
-                android:gravity="center"
-                android:text="목"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday7"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
-
-            <TextView
-                android:text="4"
-                android:layout_width="wrap_content"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_width="0dp"
+                android:id="@+id/monday1600courseInfoTextView"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday8"/>
-
-            <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday8"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday8"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday8"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday8"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
-
-            <TextView
-                android:text="5"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1600courseInfoTextView"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday9"/>
-
-            <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday9"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday9"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday9"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday9"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
-
-            <TextView
-                android:text="6"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_200"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:gravity="right"/>
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1600courseInfoTextView"/>
 
             <TextView
-                android:text="월"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/monday10"/>
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1600courseInfoTextView"/>
 
             <TextView
-                android:text="화"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:background="@drawable/cell"
                 android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday10"/>
-            <TextView
-                android:text="수"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday10"/>
-            <TextView
-                android:text="목"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/thursday10"/>
-            <TextView
-                android:text="금"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/friday10"/>
-        </TableRow>
+                android:textColor="@color/black"
+                android:id="@+id/friday1600courseInfoTextView"/>
 
-    </TableLayout>
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="17:15"
+                android:textColor="@color/black"/>
 
-</FrameLayout>
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1715courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1715courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1715courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1715courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1715courseInfoTextView"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="Break time"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/mondaybreaktimecourseInfoTextView5"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesdaybreaktimecourseInfoTextView5"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesdaybreaktimecourseInfoTextView5"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursdaybreaktimecourseInfoTextView5"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/fridaybreaktimecourseInfoTextView5"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="17:30"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1730courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1730courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1730courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1730courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text=""
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1730courseInfoTextView"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:textSize="20dp"
+                android:layout_gravity="fill"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:text="18:45"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:background="@drawable/cell"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/monday1845courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/tuesday1845courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/wednesday1845courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/thursday1845courseInfoTextView"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/friday1845courseInfoTextView"/>
+
+        </GridLayout>
+    </LinearLayout>
+
+</LinearLayout>
