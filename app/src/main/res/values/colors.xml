@@ -17,4 +17,9 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#212121</color>
     <color name="divider">#B6B6B6</color>
+
+    <color name="_bg_______ek2_color">#FFFFFF</color>
+    <color name="_bg__login__button__ek1_color">#000000</color>
+    <color name="rectangle_173_color">#221F49</color>
+    <color name="______color">#1E232C</color>
 </resources>

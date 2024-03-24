@@ -71,7 +71,7 @@ public class StatisticsFragment extends Fragment {
         final int[] totalLimit = {0};
 
         // Get saved courses from Firestore
-        db.collection("schedule")
+        db.collection("schedules")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -88,6 +88,7 @@ public class StatisticsFragment extends Fragment {
                                 String courseGrade = course.getGrade();
                                 double courseRate = (double) course.getPersonnel() / course.getLimit();
                                 int coursePersonnel = course.getPersonnel();
+                                int courseLimit = course.getLimit();
 
                                 // Find TextViews for course information
                                 TextView courseNameTextView = getView().findViewById(R.id.courseName);
@@ -95,6 +96,7 @@ public class StatisticsFragment extends Fragment {
                                 TextView courseGradeTextView = getView().findViewById(R.id.courseGrade);
                                 TextView courseRateTextView = getView().findViewById(R.id.courseRate);
                                 TextView coursePersonnelTextView = getView().findViewById(R.id.coursePersonnel);
+                                TextView courseLimitTextView = getView().findViewById(R.id.courseLimit);
 
                                 // Set course information to TextViews
                                 courseNameTextView.setText(courseName);
@@ -102,6 +104,7 @@ public class StatisticsFragment extends Fragment {
                                 courseGradeTextView.setText(courseGrade);
                                 courseRateTextView.setText(String.format("%.2f", courseRate));
                                 coursePersonnelTextView.setText(String.valueOf(coursePersonnel));
+                                courseLimitTextView.setText(String.valueOf(courseLimit));
                             }
                         }
 

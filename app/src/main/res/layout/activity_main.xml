@@ -5,6 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".ui.activity.MainActivity">
 
     <RelativeLayout
@@ -15,7 +16,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/Theme.RegisterationProject">
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/hanshinlogo"
+                android:layout_gravity="end"/>
+
         </androidx.appcompat.widget.Toolbar>
 
 
@@ -34,27 +42,29 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:orientation="vertical"
-                    android:background="@color/purple_200"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/notoce_background"
+                    android:orientation="vertical">
+
                     <ImageButton
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:scaleType="centerCrop"
                         android:padding="0dp"
-                        android:src="@drawable/logo"/>
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
                         android:text="공지사항"
-                        android:textColor="#ffffff"
+                        android:fontFamily="@font/kangwonbig"
+                        android:textColor="#121111"
                         android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ListView
@@ -62,8 +72,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/noticeListView"
                     android:layout_margin="10dp"
-                    android:dividerHeight="10dp"
-                    android:divider="#ffffff"></ListView>
+                    android:dividerHeight="1dp"
+                    android:divider="#A39F9F"></ListView>
 
             </LinearLayout>
 
@@ -84,6 +94,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextAppearance="@style/MyItemFont"
         app:headerLayout="@layout/navi_header"
         app:menu="@menu/navi_menu" />
 

@@ -24,4 +24,10 @@
         <item name="android:textColor">@color/toolbar_title_color</item>
         <item name="android:textSize">20sp</item>
     </style>
+    <style name="MyItemFont" parent="android:Widget.TextView">
+    <item name="android:fontFamily">@font/onemobile</item>
+    </style>
+
+
+    출처: https://jhshjs.tistory.com/22 [독학하는 1인 개발자:티스토리]
 </resources>

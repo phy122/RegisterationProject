@@ -4,45 +4,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="공지사항"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="#ffffff"
-        android:id="@+id/noticeText"
-        android:drawableStart="@drawable/ic_baseline_textsms_24"
-        android:drawableLeft="@drawable/ic_baseline_textsms_24"
-        android:background="@color/purple_200"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:background="@color/_bg_______ek2_color">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/_bg_______ek2_color"
+            android:fontFamily="@font/kangwonbig"
+            android:padding="10dp"
+            android:text="공지사항"
+            android:textColor="#673AB7"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/noticeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="안녕하세요"
+            android:padding="10dp"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500">
+        android:background="#FFFFFF">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/onemobile"
             android:text="박호영"
             android:layout_gravity="center"
             android:padding="3dp"
             android:layout_marginLeft="8dp"
-            android:textColor="#ffffff"
+            android:textColor="#0B0A0A"
             android:textColorHint="#ffffff"
             android:id="@+id/nameText"/>
 
         <TextView
+            android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="2023-11-25"
             android:layout_gravity="center"
-            android:padding="3dp"
             android:layout_marginLeft="8dp"
-            android:textColor="#ffffff"
-            android:textColorHint="#ffffff"
-            android:id="@+id/dateText"/>
+            android:fontFamily="@font/onemobile"
+            android:padding="3dp"
+            android:text="2023-11-25"
+            android:textColor="#0E0E0E"
+            android:textColorHint="#ffffff" />
 
     </LinearLayout>
 
