@@ -23,12 +23,16 @@ public class Course implements Serializable {
     private String fridayStartTime; // 수요일 시작 시간
     private String fridayEndTime;
     private String dayOfWeek;
+    private int personnel; // 수강 신청 인원
+    private int limit; //수강 제한 인원
+    private int courseRival;
 
     // Default constructor (required by Firestore)
     public Course() {}
 
+
     // Constructor with parameters
-    public Course(String courseName, String grade, String division, String credit, String major, String professor,  String dayOfWeek, String mondayStartTime, String mondayEndTime, String wednesdayStartTime, String wednesdayEndTime,String getDayOfWeekString,String tuesdayStartTime,String tuesdayEndTime,String thursdayStartTime,String thursEndTime,String fridayStartTime,String fridayEndTime) {
+    public Course(String courseName, String grade, String division, String credit, String major, String professor,  String dayOfWeek,int limit, String mondayStartTime, String mondayEndTime, String wednesdayStartTime, String wednesdayEndTime,String getDayOfWeekString,String tuesdayStartTime,String tuesdayEndTime,String thursdayStartTime,String thursEndTime,String fridayStartTime,String fridayEndTime, int personnel,int courseRival) {
         this.courseName = courseName;
         this.grade = grade;
         this.division = division;
@@ -46,6 +50,34 @@ public class Course implements Serializable {
         this.fridayStartTime = fridayStartTime;
         this.fridayEndTime = fridayEndTime;
         this.dayOfWeek = dayOfWeek;
+        this.personnel = personnel;
+        this.courseRival = courseRival;
+        this.limit = limit;
+
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public int getCourseRival() {
+        return courseRival;
+    }
+
+    public void setCourseRival(int courseRival) {
+        this.courseRival = courseRival;
+    }
+
+    public int getPersonnel() {
+        return personnel;
+    }
+
+    public void setPersonnel(int personnel) {
+        this.personnel = personnel;
     }
 
     // Getters and setters for each field

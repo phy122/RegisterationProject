@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +15,6 @@ import com.example.registerationproject.R;
 import com.example.registerationproject.models.Course;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
@@ -48,17 +48,17 @@ public class ScheduleFragment extends Fragment {
         monday1045TextView = view.findViewById(R.id.monday1045courseInfoTextView);
         monday1100TextView = view.findViewById(R.id.monday1100courseInfoTextView);
 
-        // Get saved courses from Firestore
-        db.collection("schedules")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                            Course course = document.toObject(Course.class);
-                            displayCourse(course);
-                        }
-                    }
-                });
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            Course course = (Course) bundle.getSerializable("course");
+            if (course != null) {
+                displayCourse(course);
+                saveCourseToFirestore(course);
+            } else {
+                showToast("강의 정보를 불러오지 못했습니다.");
+            }
+        }
+        loadCoursesFromFirestore();
 
         return view;
     }
@@ -66,25 +66,85 @@ public class ScheduleFragment extends Fragment {
     private void displayCourse(Course course) {
         // Display course information in corresponding TextViews
         if (course.getMondayStartTime().equals("09:30")) {
-            monday0930TextView.setText(course.getCourseName());
-            monday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
+                // 강의 정보가 없으면 해당 시간표 초기화
+                monday0930TextView.setText("");
+                monday0930TextView.setBackgroundResource(0); // 배경색 초기화
+            } else {
+                monday0930TextView.setText(course.getCourseName());
+                monday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            }
         }
         if (course.getMondayStartTime().equals("10:45")) {
-            monday1045TextView.setText(course.getCourseName());
-            monday1045TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
+                // 강의 정보가 없으면 해당 시간표 초기화
+                monday1045TextView.setText("");
+                monday1045TextView.setBackgroundResource(0); // 배경색 초기화
+            } else {
+                monday1045TextView.setText(course.getCourseName());
+                monday1045TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            }
         }
         if (course.getMondayStartTime().equals("11:00")) {
-            monday1100TextView.setText(course.getCourseName());
-            monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
+                // 강의 정보가 없으면 해당 시간표 초기화
+                monday1100TextView.setText("");
+                monday1100TextView.setBackgroundResource(0); // 배경색 초기화
+            } else {
+                monday1100TextView.setText(course.getCourseName());
+                monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            }
         }
         // 종료 시간에 대한 처리 추가
         if (course.getMondayEndTime() != null && course.getMondayEndTime().equals("10:45")) {
-            monday1045TextView.setText(course.getCourseName());
-            monday1045TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
+                // 강의 정보가 없으면 해당 시간표 초기화
+                monday1045TextView.setText("");
+                monday1045TextView.setBackgroundResource(0); // 배경색 초기화
+            } else {
+                monday1045TextView.setText(course.getCourseName());
+                monday1045TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            }
         }
         if (course.getMondayEndTime() != null && course.getMondayEndTime().equals("11:00")) {
-            monday1100TextView.setText(course.getCourseName());
-            monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
+                // 강의 정보가 없으면 해당 시간표 초기화
+                monday1100TextView.setText("");
+                monday1100TextView.setBackgroundResource(0); // 배경색 초기화
+            } else {
+                monday1100TextView.setText(course.getCourseName());
+                monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
+            }
         }
+    }
+
+    private void saveCourseToFirestore(Course course) {
+        // Firestore에 추가할 시간표 데이터 설정
+        String documentId = course.getDayAndTimeRange();
+        // Firestore에 시간표 추가
+        db.collection("schedules").document()
+                .set(course)
+                .addOnSuccessListener(aVoid -> showToast("시간표가 추가되었습니다."))
+                .addOnFailureListener(e -> showToast("시간표 추가에 실패했습니다."));
+    }
+
+    private void loadCoursesFromFirestore() {
+        // Retrieve courses from Firestore
+        db.collection("schedules")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            Course course = document.toObject(Course.class);
+                            displayCourse(course); // Display each course on UI
+                        }
+                    } else {
+                        showToast("Failed to load courses from Firestore.");
+                    }
+                });
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

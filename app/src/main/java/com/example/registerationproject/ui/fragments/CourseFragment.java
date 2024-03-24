@@ -108,6 +108,7 @@ public class CourseFragment extends Fragment {
         String selectedCredit = creditSpinner.getSelectedItemPosition() > 0 ? creditSpinner.getSelectedItem().toString() : null;
         String selectedMajor = majorSpinner.getSelectedItemPosition() > 0 ? majorSpinner.getSelectedItem().toString() : null;
         String selectedProfessor = professorSpinner.getSelectedItemPosition() > 0 ? professorSpinner.getSelectedItem().toString() : null;
+        String selectedcourseName = courseSpinner.getSelectedItemPosition() > 0 ? courseSpinner.getSelectedItem().toString() : null;
 
         // Firestore에서 강의를 검색하여 결과를 표시하는 코드
         Query query = db.collection("courses");
@@ -126,6 +127,9 @@ public class CourseFragment extends Fragment {
         }
         if (selectedProfessor != null) {
             query = query.whereEqualTo("professor", selectedProfessor);
+        }
+        if (selectedcourseName != null){
+            query = query.whereEqualTo("courseName", selectedcourseName);
         }
 
         query.get()
@@ -168,7 +172,6 @@ public class CourseFragment extends Fragment {
                     TextView majorTextView = itemView.findViewById(R.id.majorTextView);
                     TextView gradeTextView = itemView.findViewById(R.id.gradeTextView);
                     TextView divisionTextView = itemView.findViewById(R.id.divisionTextView);
-                    // 시간 관련 TextView 추가
                     TextView timeTextView1 = itemView.findViewById(R.id.timeTextView1);
                     TextView timeTextView2 = itemView.findViewById(R.id.timeTextView2);
 
@@ -179,7 +182,8 @@ public class CourseFragment extends Fragment {
                     majorTextView.setText(course.getMajor());
                     professorTextView.setText(course.getProfessor());
                     timeTextView1.setText(course.getDayAndTimeRange());
-                    timeTextView2.setText(course.getDayAndTimeRange());
+
+                    // 강의 시간 정보 설정
 
                     // 시간표에 추가하는 버튼
                     Button addToTimetableButton = itemView.findViewById(R.id.addToTimetableButton);
@@ -219,7 +223,4 @@ public class CourseFragment extends Fragment {
     private void showToast(String message) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
-
 }
-
-// 시간 정보

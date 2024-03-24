@@ -1,66 +1,172 @@
 package com.example.registerationproject.ui.fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.registerationproject.R;
+import com.example.registerationproject.models.Course;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StatisticsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public class StatisticsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private TextView averageCompetitionRateTextView;
+    private FirebaseFirestore db;
+    private Button deleteButton;
 
     public StatisticsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StatisticsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StatisticsFragment newInstance(String param1, String param2) {
-        StatisticsFragment fragment = new StatisticsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Initialize Firebase Firestore
+        db = FirebaseFirestore.getInstance();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false);
+        View view = inflater.inflate(R.layout.statistics, container, false);
+
+        // Initialize views
+        averageCompetitionRateTextView = view.findViewById(R.id.courseRate);
+        deleteButton = view.findViewById(R.id.deleteButton);
+
+        // Calculate and display the average competition rate for courses
+        calculateAverageCompetitionRate();
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform delete operation
+                deleteCourse();
+            }
+        });
+
+        return view;
     }
+
+    private void calculateAverageCompetitionRate() {
+        final int[] courseCount = {0};
+        final int[] totalPersonnel = {0};
+        final int[] totalLimit = {0};
+
+        // Get saved courses from Firestore
+        db.collection("schedule")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                            Course course = document.toObject(Course.class);
+                            if (course != null) {
+                                courseCount[0]++;
+                                totalPersonnel[0] += course.getPersonnel();
+                                totalLimit[0] += course.getLimit();
+
+                                // Set course information to TextViews
+                                String courseName = course.getCourseName();
+                                String courseDivide = course.getDivision();
+                                String courseGrade = course.getGrade();
+                                double courseRate = (double) course.getPersonnel() / course.getLimit();
+                                int coursePersonnel = course.getPersonnel();
+
+                                // Find TextViews for course information
+                                TextView courseNameTextView = getView().findViewById(R.id.courseName);
+                                TextView courseDivideTextView = getView().findViewById(R.id.courseDivide);
+                                TextView courseGradeTextView = getView().findViewById(R.id.courseGrade);
+                                TextView courseRateTextView = getView().findViewById(R.id.courseRate);
+                                TextView coursePersonnelTextView = getView().findViewById(R.id.coursePersonnel);
+
+                                // Set course information to TextViews
+                                courseNameTextView.setText(courseName);
+                                courseDivideTextView.setText(courseDivide);
+                                courseGradeTextView.setText(courseGrade);
+                                courseRateTextView.setText(String.format("%.2f", courseRate));
+                                coursePersonnelTextView.setText(String.valueOf(coursePersonnel));
+                            }
+                        }
+
+                        // Calculate average competition rate
+                        double averageCompetitionRate = 0.0;
+                        if (totalLimit[0] > 0) {
+                            averageCompetitionRate = (double) totalPersonnel[0] / totalLimit[0];
+                        }
+
+                        // Display average competition rate
+                        averageCompetitionRateTextView.setText(String.format("경쟁률: %.2f", averageCompetitionRate));
+                    }
+                });
+    }
+
+
+    private void deleteCourse() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+
+        // Firestore에서 강의 목록을 가져와서 다이얼로그에 표시
+        db.collection("schedules")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<String> courseNames = new ArrayList<>();
+                        List<Course> courses = new ArrayList<>();
+
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Course course = document.toObject(Course.class);
+                            if (course != null) {
+                                courses.add(course);
+                                String courseName = course.getCourseName();
+                                if (courseName != null) {
+                                    courseNames.add(courseName);
+                                }
+                            }
+                        }
+
+                        CharSequence[] items = courseNames.toArray(new CharSequence[0]);
+
+                        builder.setItems(items, (dialog, which) -> {
+                            // 선택한 강의 삭제
+                            String courseId = task.getResult().getDocuments().get(which).getId(); // 선택한 강의의 문서 ID
+                            db.collection("schedules").document(courseId)
+                                    .delete()
+                                    .addOnSuccessListener(aVoid -> {
+                                        Toast.makeText(getContext(), "강의가 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                                        // 삭제 후 필요한 작업 수행
+                                        calculateAverageCompetitionRate(); // 삭제 후 경쟁률 다시 계산
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(getContext(), "강의 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                    });
+                        });
+
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    } else {
+                        Toast.makeText(getContext(), "강의 목록을 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+
+
 }
+
+
