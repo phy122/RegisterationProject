@@ -1,32 +1,84 @@
 <!-- fragment_create_post.xml -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/_bg_______ek2_color">
 
-    <EditText
-        android:id="@+id/edit_text_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="제목을 입력하세요" />
-
-    <EditText
-        android:id="@+id/edit_text_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="내용을 입력하세요"
-        android:inputType="textMultiLine"
-        android:minLines="4" />
-
-    <Button
-        android:id="@+id/button_submit_post"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+    <TextView
+        android:gravity="start"
+        android:id="@+id/edit_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="16dp"
-        android:text="게시글 등록" />
+        android:textSize="18.00sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/onemobile"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        tools:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/community_background"
+        android:paddingVertical="19dp"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/edit_title"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textColorHint="#787676"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:hint="제목을 입력하세요"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/community_background"
+        android:paddingTop="19dp"
+        android:paddingBottom="189dp"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/edit_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColorHint="#787676"
+            android:hint="내용을 입력하세요" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_button"
+            android:background="@drawable/register_button"
+            android:text="게시글 등록"
+            android:fontFamily="@font/onemobile"/>
+    </LinearLayout>
 
 </LinearLayout>

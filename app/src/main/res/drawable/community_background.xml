@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/_bg_______ek2_color" /> <!-- 배경색 지정 -->
+    <stroke
+        android:width="5dp"
+        android:color="#5F5E61" />
+    <padding
+        android:left="0dp"
+        android:top="0dp"
+        android:right="0dp"
+        android:bottom="0dp" /> <!-- 안쪽 여백 설정 -->
+</shape>

@@ -2,30 +2,74 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/community_item_background">
 
-    <TextView
-        android:id="@+id/text_view_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/community_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/onemobile"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/text_view_content"
+        android:id="@+id/community_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/onemobile"
+        android:textColor="#4A4848"
         android:layout_marginTop="8dp" />
 
     <TextView
-        android:id="@+id/text_view_likes"
-        android:layout_width="wrap_content"
+        android:textColor="#494646"
+        android:fontFamily="@font/onemobile"
+        android:id="@+id/community_date"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/button_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Like" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_thumb_up_off_alt_24"/>
+        <TextView
+            android:id="@+id/community_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#DC1919"
+            android:textSize="15dp"
+            android:fontFamily="@font/onemobile"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="320dp"
+            android:fontFamily="@font/onemobile"
+            android:background="@drawable/button_likes"
+            android:textColor="#494747"
+            android:text="공감"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

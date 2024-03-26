@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/_bg_______ek2_color"
     tools:context=".ui.fragments.GPSFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -28,21 +29,30 @@
             android:id="@+id/btnmark1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
+            android:layout_marginLeft="20dp"
             android:text="장공관(본관)"/>
         <Button
             android:id="@+id/btnmark2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="필헌관"/>
         <Button
             android:id="@+id/btnmark3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="장준하통일관"/>
         <Button
             android:id="@+id/btnmark4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="경삼관(도서관)"/>
     </LinearLayout>
     <LinearLayout
@@ -55,21 +65,29 @@
             android:id="@+id/btnmark5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="늦봄관"/>
         <Button
             android:id="@+id/btnmark6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="만우관"/>
         <Button
             android:id="@+id/btnmark7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="송암관"/>
         <Button
             android:id="@+id/btnmark8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="소통관"/>
     </LinearLayout>
     <LinearLayout
@@ -81,21 +99,29 @@
             android:id="@+id/btnmark9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="임마누엘관"/>
         <Button
             android:id="@+id/btnmark10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="한울관"/>
         <Button
             android:id="@+id/btnmark11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="해오름관"/>
         <Button
             android:id="@+id/btnmark12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColor="@color/_bg_______ek2_color"
             android:text="샬롬채플관"/>
     </LinearLayout>
 

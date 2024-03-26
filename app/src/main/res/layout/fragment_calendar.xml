@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,33 +7,48 @@
     tools:context=".ui.fragments.CalendarFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <CalendarView
-        android:id="@+id/calendarView"
+
+    <LinearLayout
+        android:id="@+id/layout_calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/todoEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/calendarView"
-        android:layout_marginTop="16dp"
-        android:hint="할일을 입력하세요"/>
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/addTodoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/todoEditText"
-        android:layout_marginTop="8dp"
-        android:text="추가"/>
+        <EditText
+            android:id="@+id/todoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calendarView"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/onemobile"
+            android:hint="할일을 입력하세요"/>
+
+        <Button
+            android:id="@+id/addTodoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/todoEditText"
+            android:textColor="@color/_bg_______ek2_color"
+            android:fontFamily="@font/onemobile"
+            android:background="@drawable/register_button"
+            android:layout_marginTop="8dp"
+            android:text="추가"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
 
     <ListView
         android:id="@+id/todoListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addTodoButton"
+        android:layout_below="@id/layout_calendar"
         android:layout_marginTop="16dp"/>
 
 </RelativeLayout>

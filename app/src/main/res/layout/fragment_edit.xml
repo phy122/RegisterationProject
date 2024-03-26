@@ -1,41 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- fragment_create_post.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/_bg_______ek2_color">
 
-    <EditText
-        android:id="@+id/edit_text_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="제목을 입력하세요."
-        android:inputType="text" />
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <TextView
+            android:gravity="start"
+            android:id="@+id/modify_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18.00sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/onemobile"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            tools:text="" />
 
-    <EditText
-        android:id="@+id/edit_text_content"
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_title"
-        android:layout_marginTop="16dp"
-        android:hint="내용을 입력하세요."
-        android:inputType="textMultiLine"
-        android:minLines="5" />
-
-    <Button
-        android:id="@+id/button_update_post"
-        android:layout_width="wrap_content"
+        android:background="@drawable/community_background"
+        android:paddingVertical="19dp"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/modify_title"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textColorHint="#787676"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:hint="제목을 입력하세요"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_content"
-        android:layout_marginTop="16dp"
-        android:text="게시글 수정" />
-
-    <Button
-        android:id="@+id/button_delete_post"
-        android:layout_width="wrap_content"
+        android:background="@drawable/community_background"
+        android:paddingTop="19dp"
+        android:paddingBottom="189dp"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/modify_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/onemobile"
+            android:textColorHint="#787676"
+            android:hint="내용을 입력하세요"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_content"
-        android:layout_marginTop="16dp"
-        android:layout_toEndOf="@id/button_update_post"
-        android:text="게시글 삭제" />
+        android:gravity="center_horizontal"
+        android:paddingVertical="12dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/button_modify"
+            android:textColor="#ECE4E4"
+            android:textSize="16sp"
+            android:background="#0C174C"
+            android:fontFamily="@font/onemobile"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="게시글 수정" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/button_delete"
+            android:textColor="#ECE4E4"
+            android:textSize="16sp"
+            android:background="#0C174C"
+            android:fontFamily="@font/onemobile"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="게시글 삭제" />
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
