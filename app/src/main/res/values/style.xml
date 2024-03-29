@@ -28,6 +28,7 @@
     <item name="android:fontFamily">@font/onemobile</item>
     </style>
 
-
-    출처: https://jhshjs.tistory.com/22 [독학하는 1인 개발자:티스토리]
+    <style name="MyCalendarDateText">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

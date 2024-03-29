@@ -3,5 +3,7 @@
     android:id="@+id/todoTextView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:fontFamily="@font/onemobile"
     android:padding="8dp"
     android:textSize="16sp"/>

@@ -13,6 +13,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:background="@color/divider"
         android:paddingRight="10dp">
 
         <Spinner
@@ -43,6 +44,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:background="@color/divider"
         android:paddingRight="10dp">
 
         <Spinner
@@ -68,6 +70,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:background="@color/divider"
         android:paddingRight="10dp">
 
         <Spinner
@@ -83,7 +86,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:background="@color/purple_200"
+            android:background="@color/rectangle_173_color"
             android:text="강의 검색"
             android:textColor="#ffffff"
             android:textSize="15dp"
@@ -96,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#ffffff">
+        android:background="@color/divider">
 
     </LinearLayout>
 

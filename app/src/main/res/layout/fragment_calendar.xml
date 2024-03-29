@@ -18,7 +18,10 @@
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:dateTextAppearance="@style/MyCalendarDateText"
+            android:weekDayTextAppearance="@style/MyCalendarDateText" />
 
         <EditText
             android:id="@+id/todoEditText"
@@ -26,7 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/calendarView"
             android:layout_marginTop="16dp"
+            android:textColor="@color/black"
             android:fontFamily="@font/onemobile"
+            android:textColorHint="#656161"
             android:hint="할일을 입력하세요"/>
 
         <Button

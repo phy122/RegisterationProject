@@ -9,7 +9,7 @@
         android:layout_height="35dp"
         android:layout_gravity="center"
         android:text="삭제"
-        android:background="@color/purple_200"
+        android:background="@color/rectangle_173_color"
         android:textColor="#ffffff"
         android:textSize="18dp"
         android:id="@+id/deleteButton"
@@ -34,8 +34,8 @@
                 android:id="@+id/courseGrade"
                 android:layout_gravity="center"
                 android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"/>
+                android:textColor="@color/black"
+                android:textColorHint="#757373"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,8 +44,8 @@
                 android:id="@+id/courseName"
                 android:layout_gravity="center"
                 android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
+                android:textColor="#090909"
+                android:textColorHint="#7C7878"
                 android:textStyle="bold"/>
 
             <TextView
@@ -55,8 +55,8 @@
                 android:id="@+id/courseDivide"
                 android:layout_gravity="center"
                 android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"/>
+                android:textColor="#0B0A0A"
+                android:textColorHint="#605E5E"/>
         </LinearLayout>
 
         <LinearLayout
@@ -73,7 +73,7 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="@color/black"
-                android:textColorHint="#ffffff"/>
+                android:textColorHint="#818080"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="@color/black"
-                android:textColorHint="#ffffff"/>
+                android:textColorHint="#979595"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="@color/black"
-                android:textColorHint="#ffffff"/>
+                android:textColorHint="#787878"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="@color/black"
-                android:textColorHint="#ffffff"/>
+                android:textColorHint="#7A7A7A"/>
 
         </LinearLayout>
 

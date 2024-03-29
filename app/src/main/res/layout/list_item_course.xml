@@ -2,7 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/community_item_background">
 
     <!-- 강의 이름 -->
     <LinearLayout
@@ -15,7 +16,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/onemobile"
             android:text="강의 이름"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -24,10 +27,11 @@
             android:id="@+id/professorTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobile"
             android:layout_weight="1"
             android:text="교수명"
             android:textSize="16sp"
-            android:textColor="#666666"
+            android:textColor="#0E0E0E"
             android:layout_marginStart="8dp"/>
 
     </LinearLayout>
@@ -42,34 +46,37 @@
 
         <!-- 학점 -->
         <TextView
+            android:fontFamily="@font/onemobile"
             android:id="@+id/creditTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="학점"
             android:textSize="16sp"
-            android:textColor="#666666"
+            android:textColor="#1C1B1B"
             android:layout_marginStart="8dp"/>
 
         <!-- 학년 -->
         <TextView
+            android:fontFamily="@font/onemobile"
             android:id="@+id/gradeTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="학년"
             android:textSize="16sp"
-            android:textColor="#666666"
+            android:textColor="#040303"
             android:layout_marginStart="8dp"/>
 
         <TextView
+            android:fontFamily="@font/onemobile"
             android:id="@+id/divisionTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="구분"
             android:textSize="16sp"
-            android:textColor="#666666"
+            android:textColor="#100F0F"
             android:layout_marginStart="8dp"/>
 
 
@@ -84,12 +91,13 @@
 
         <!-- 전공 -->
         <TextView
+            android:fontFamily="@font/onemobile"
             android:id="@+id/majorTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="전공"
             android:textSize="16sp"
-            android:textColor="#666666"/>
+            android:textColor="#0C0C0C"/>
 
         <!-- 시간 -->
         <LinearLayout
@@ -98,22 +106,24 @@
             android:orientation="horizontal">
 
             <TextView
+                android:fontFamily="@font/onemobile"
                 android:id="@+id/timeTextView1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="시간"
                 android:textSize="16sp"
-                android:textColor="#666666"
+                android:textColor="#050505"
                 android:layout_marginStart="8dp"/>
             <TextView
+                android:fontFamily="@font/onemobile"
                 android:id="@+id/timeTextView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="시간"
                 android:textSize="16sp"
-                android:textColor="#666666"
+                android:textColor="#101010"
                 android:layout_marginStart="8dp"/>
 
             <!-- 공간을 채우기 위한 빈 뷰 -->
@@ -124,11 +134,13 @@
 
             <!-- 시간표에 추가하는 버튼 -->
             <Button
+                android:fontFamily="@font/onemobile"
                 android:id="@+id/addToTimetableButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/rectangle_173_color"
                 android:text="시간표에 추가"
-                android:textColor="#FFFFFF"
+                android:textColor="#ECE6E6"
                 android:layout_marginTop="16dp"/>
         </LinearLayout>
     </LinearLayout>
