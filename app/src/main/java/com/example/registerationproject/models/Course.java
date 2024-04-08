@@ -19,10 +19,21 @@ public class Course implements Serializable {
     private String wednesdayStartTime; // 수요일 시작 시간
     private String wednesdayEndTime;
     private String thursdayStartTime; // 수요일 시작 시간
-    private String thursEndTime;
+    private String thursdayEndTime;
     private String fridayStartTime; // 수요일 시작 시간
     private String fridayEndTime;
     private String dayOfWeek;
+    private String mondayStartTime2; // 월요일 시작 시간
+    private String mondayEndTime2;
+    private String tuesdayStartTime2;
+    private String tuesdayEndTime2;// 월요일 종료 시간
+    private String wednesdayStartTime2; // 수요일 시작 시간
+    private String wednesdayEndTime2;
+    private String thursdayStartTime2; // 수요일 시작 시간
+    private String thursdayEndTime2;
+    private String fridayStartTime2; // 수요일 시작 시간
+    private String fridayEndTime2;
+    private String dayOfWeek2;
     private int personnel; // 수강 신청 인원
     private int limit; //수강 제한 인원
     private int courseRival;
@@ -30,6 +41,98 @@ public class Course implements Serializable {
     // Default constructor (required by Firestore)
     public Course() {}
 
+
+    public void setTuesdayEndTime(String tuesdayEndTime) {
+        this.tuesdayEndTime = tuesdayEndTime;
+    }
+
+    public String getMondayStartTime2() {
+        return mondayStartTime2;
+    }
+
+    public void setMondayStartTime2(String mondayStartTime2) {
+        this.mondayStartTime2 = mondayStartTime2;
+    }
+
+    public String getMondayEndTime2() {
+        return mondayEndTime2;
+    }
+
+    public void setMondayEndTime2(String mondayEndTime2) {
+        this.mondayEndTime2 = mondayEndTime2;
+    }
+
+    public String getTuesdayStartTime2() {
+        return tuesdayStartTime2;
+    }
+
+    public void setTuesdayStartTime2(String tuesdayStartTime2) {
+        this.tuesdayStartTime2 = tuesdayStartTime2;
+    }
+
+    public String getTuesdayEndTime2() {
+        return tuesdayEndTime2;
+    }
+
+    public void setTuesdayEndTime2(String tuesdayEndTime2) {
+        this.tuesdayEndTime2 = tuesdayEndTime2;
+    }
+
+    public String getWednesdayStartTime2() {
+        return wednesdayStartTime2;
+    }
+
+    public void setWednesdayStartTime2(String wednesdayStartTime2) {
+        this.wednesdayStartTime2 = wednesdayStartTime2;
+    }
+
+    public String getWednesdayEndTime2() {
+        return wednesdayEndTime2;
+    }
+
+    public void setWednesdayEndTime2(String wednesdayEndTime2) {
+        this.wednesdayEndTime2 = wednesdayEndTime2;
+    }
+
+    public String getThursdayStartTime2() {
+        return thursdayStartTime2;
+    }
+
+    public void setThursdayStartTime2(String thursdayStartTime2) {
+        this.thursdayStartTime2 = thursdayStartTime2;
+    }
+
+    public String getThursdayEndTime2() {
+        return thursdayEndTime2;
+    }
+
+    public void setThursdayEndTime2(String thursdayEndTime2) {
+        this.thursdayEndTime2 = thursdayEndTime2;
+    }
+
+    public String getFridayStartTime2() {
+        return fridayStartTime2;
+    }
+
+    public void setFridayStartTime2(String fridayStartTime2) {
+        this.fridayStartTime2 = fridayStartTime2;
+    }
+
+    public String getFridayEndTime2() {
+        return fridayEndTime2;
+    }
+
+    public void setFridayEndTime2(String fridayEndTime2) {
+        this.fridayEndTime2 = fridayEndTime2;
+    }
+
+    public String getDayOfWeek2() {
+        return dayOfWeek2;
+    }
+
+    public void setDayOfWeek2(String dayOfWeek2) {
+        this.dayOfWeek2 = dayOfWeek2;
+    }
 
     // Constructor with parameters
     public Course(String courseName, String grade, String division, String credit, String major, String professor,  String dayOfWeek,int limit, String mondayStartTime, String mondayEndTime, String wednesdayStartTime, String wednesdayEndTime,String getDayOfWeekString,String tuesdayStartTime,String tuesdayEndTime,String thursdayStartTime,String thursEndTime,String fridayStartTime,String fridayEndTime, int personnel,int courseRival) {
@@ -46,7 +149,7 @@ public class Course implements Serializable {
         this.wednesdayStartTime = wednesdayStartTime;
         this.wednesdayEndTime = wednesdayEndTime;
         this.thursdayStartTime = thursdayStartTime;
-        this.thursEndTime = thursEndTime;
+        this.thursdayEndTime = thursdayEndTime;
         this.fridayStartTime = fridayStartTime;
         this.fridayEndTime = fridayEndTime;
         this.dayOfWeek = dayOfWeek;
@@ -165,7 +268,7 @@ public class Course implements Serializable {
         this.tuesdayStartTime = tuesdayStartTime;
     }
 
-    public String getTuesdaySEndTime() {
+    public String getTuesdayEndTime() {
         return tuesdayEndTime;
     }
 
@@ -197,12 +300,12 @@ public class Course implements Serializable {
         this.thursdayStartTime = thursdayStartTime;
     }
 
-    public String getThursEndTime() {
-        return thursEndTime;
+    public String getThursdayEndTime() {
+        return thursdayEndTime;
     }
 
-    public void setThursEndTime(String thursEndTime) {
-        this.thursEndTime = thursEndTime;
+    public void setThursdayEndTime(String thursdayEndTime) {
+        this.thursdayEndTime = thursdayEndTime;
     }
 
     public String getFridayStartTime() {
@@ -237,10 +340,25 @@ public class Course implements Serializable {
             return dayOfWeek + " " + tuesdayStartTime + " - " + tuesdayEndTime;
         } else if (dayOfWeek != null && wednesdayStartTime != null && wednesdayEndTime != null) {
             return dayOfWeek + " " + wednesdayStartTime + " - " + wednesdayEndTime;
-        } else if (dayOfWeek != null && thursdayStartTime != null && thursEndTime != null) {
-            return dayOfWeek + " " + thursdayStartTime + " - " + thursEndTime;
+        } else if (dayOfWeek != null && thursdayStartTime != null && thursdayEndTime != null) {
+            return dayOfWeek + " " + thursdayStartTime + " - " + thursdayEndTime;
         } else if (dayOfWeek != null && fridayStartTime != null && fridayEndTime != null) {
             return dayOfWeek + " " + fridayStartTime + " - " + fridayEndTime;
+        }
+        // 이 외의 경우에 대한 처리 추가
+        return "";
+    }
+    public String getDayAndTimeRange2() {
+        if (dayOfWeek2 != null && mondayStartTime2 != null && mondayEndTime2 != null) {
+            return dayOfWeek2 + " " + mondayStartTime2 + " - " + mondayEndTime2;
+        } else if (dayOfWeek2 != null && tuesdayStartTime2 != null && tuesdayEndTime2 != null) {
+            return dayOfWeek2 + " " + tuesdayStartTime2 + " - " + tuesdayEndTime2;
+        } else if (dayOfWeek2 != null && wednesdayStartTime2 != null && wednesdayEndTime2 != null) {
+            return dayOfWeek2 + " " + wednesdayStartTime2 + " - " + wednesdayEndTime2;
+        } else if (dayOfWeek2 != null && thursdayStartTime2 != null && thursdayEndTime2 != null) {
+            return dayOfWeek2 + " " + thursdayStartTime2 + " - " + thursdayEndTime2;
+        } else if (dayOfWeek2 != null && fridayStartTime2 != null && fridayEndTime2 != null) {
+            return dayOfWeek2 + " " + fridayStartTime2 + " - " + fridayEndTime2;
         }
         // 이 외의 경우에 대한 처리 추가
         return "";

@@ -182,6 +182,7 @@ public class CourseFragment extends Fragment {
                     majorTextView.setText(course.getMajor());
                     professorTextView.setText(course.getProfessor());
                     timeTextView1.setText(course.getDayAndTimeRange());
+                    timeTextView2.setText(course.getDayAndTimeRange2());
 
                     // 강의 시간 정보 설정
 
