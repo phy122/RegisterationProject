@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 public class Course implements Serializable {
 
+    private String documentId;
     private String courseName;
     private String grade;
     private String division;
@@ -41,6 +42,14 @@ public class Course implements Serializable {
     // Default constructor (required by Firestore)
     public Course() {}
 
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    // 문서 ID를 설정하는 setter
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
 
     public void setTuesdayEndTime(String tuesdayEndTime) {
         this.tuesdayEndTime = tuesdayEndTime;

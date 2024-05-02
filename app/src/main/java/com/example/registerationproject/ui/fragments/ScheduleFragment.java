@@ -179,7 +179,7 @@ public class ScheduleFragment extends Fragment {
 
     private void displayCourse(Course course) {
         // Display course information in corresponding TextViews
-        if (course.getMondayStartTime().equals("09:30")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday0930TextView.setText("");
@@ -190,7 +190,7 @@ public class ScheduleFragment extends Fragment {
                 monday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime().equals("11:00")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1100TextView.setText("");
@@ -201,7 +201,7 @@ public class ScheduleFragment extends Fragment {
                 monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime().equals("13:00")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1300TextView.setText("");
@@ -212,7 +212,7 @@ public class ScheduleFragment extends Fragment {
                 monday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime().equals("14:30")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1430TextView.setText("");
@@ -223,7 +223,7 @@ public class ScheduleFragment extends Fragment {
                 monday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime().equals("16:00")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1600TextView.setText("");
@@ -234,7 +234,7 @@ public class ScheduleFragment extends Fragment {
                 monday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime().equals("17:30")) {
+        if (course.getMondayStartTime() != null && course.getMondayStartTime().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1730TextView.setText("");
@@ -314,7 +314,7 @@ public class ScheduleFragment extends Fragment {
         }
 
 
-        if (course.getTuesdayStartTime().equals("09:30")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday0930TextView.setText("");
@@ -325,7 +325,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime().equals("11:00")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1100TextView.setText("");
@@ -336,7 +336,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime().equals("13:00")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1300TextView.setText("");
@@ -347,7 +347,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime().equals("14:30")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1430TextView.setText("");
@@ -358,7 +358,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime().equals("16:00")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1600TextView.setText("");
@@ -369,7 +369,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime().equals("17:30")) {
+        if (course.getTuesdayStartTime() != null && course.getTuesdayStartTime().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1730TextView.setText("");
@@ -449,7 +449,7 @@ public class ScheduleFragment extends Fragment {
         }
 
 
-        if (course.getWednesdayStartTime().equals("09:30")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday0930TextView.setText("");
@@ -460,7 +460,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime().equals("11:00")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1100TextView.setText("");
@@ -471,7 +471,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime().equals("13:00")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1300TextView.setText("");
@@ -482,7 +482,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime().equals("14:30")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1430TextView.setText("");
@@ -493,7 +493,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime().equals("16:00")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1600TextView.setText("");
@@ -504,7 +504,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime().equals("17:30")) {
+        if (course.getWednesdayStartTime() != null && course.getWednesdayStartTime().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1730TextView.setText("");
@@ -584,7 +584,7 @@ public class ScheduleFragment extends Fragment {
         }
 
 
-        if (course.getThursdayStartTime().equals("09:30")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday0930TextView.setText("");
@@ -595,7 +595,7 @@ public class ScheduleFragment extends Fragment {
                 thursday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime().equals("11:00")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1100TextView.setText("");
@@ -606,7 +606,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime().equals("13:00")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1300TextView.setText("");
@@ -617,7 +617,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime().equals("14:30")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1430TextView.setText("");
@@ -628,7 +628,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime().equals("16:00")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1600TextView.setText("");
@@ -639,7 +639,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime().equals("17:30")) {
+        if (course.getThursdayStartTime() != null && course.getThursdayStartTime().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1730TextView.setText("");
@@ -719,7 +719,7 @@ public class ScheduleFragment extends Fragment {
         }
 
 
-        if (course.getFridayStartTime().equals("09:30")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday0930TextView.setText("");
@@ -730,7 +730,7 @@ public class ScheduleFragment extends Fragment {
                 friday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime().equals("11:00")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1100TextView.setText("");
@@ -741,7 +741,7 @@ public class ScheduleFragment extends Fragment {
                 friday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime().equals("13:00")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1300TextView.setText("");
@@ -752,7 +752,7 @@ public class ScheduleFragment extends Fragment {
                 friday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime().equals("14:30")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1430TextView.setText("");
@@ -763,7 +763,7 @@ public class ScheduleFragment extends Fragment {
                 friday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime().equals("16:00")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1600TextView.setText("");
@@ -774,7 +774,7 @@ public class ScheduleFragment extends Fragment {
                 friday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime().equals("17:30")) {
+        if (course.getFridayStartTime() != null && course.getFridayStartTime().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1730TextView.setText("");
@@ -853,7 +853,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        if (course.getMondayStartTime2().equals("09:30")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday0930TextView.setText("");
@@ -864,7 +864,7 @@ public class ScheduleFragment extends Fragment {
                 monday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime2().equals("11:00")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1100TextView.setText("");
@@ -875,7 +875,7 @@ public class ScheduleFragment extends Fragment {
                 monday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime2().equals("13:00")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1300TextView.setText("");
@@ -886,7 +886,7 @@ public class ScheduleFragment extends Fragment {
                 monday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime2().equals("14:30")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1430TextView.setText("");
@@ -897,7 +897,7 @@ public class ScheduleFragment extends Fragment {
                 monday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime2().equals("16:00")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1600TextView.setText("");
@@ -908,7 +908,7 @@ public class ScheduleFragment extends Fragment {
                 monday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getMondayStartTime2().equals("17:30")) {
+        if (course.getMondayStartTime2() != null && course.getMondayStartTime2().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 monday1730TextView.setText("");
@@ -987,7 +987,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        if (course.getTuesdayStartTime2().equals("09:30")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday0930TextView.setText("");
@@ -998,7 +998,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime2().equals("11:00")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1100TextView.setText("");
@@ -1009,7 +1009,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime2().equals("13:00")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1300TextView.setText("");
@@ -1020,7 +1020,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime2().equals("14:30")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1430TextView.setText("");
@@ -1031,7 +1031,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime2().equals("16:00")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1600TextView.setText("");
@@ -1042,7 +1042,7 @@ public class ScheduleFragment extends Fragment {
                 tuesday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getTuesdayStartTime2().equals("17:30")) {
+        if (course.getTuesdayStartTime2() != null && course.getTuesdayStartTime2().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 tuesday1730TextView.setText("");
@@ -1121,7 +1121,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        if (course.getWednesdayStartTime2().equals("09:30")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday0930TextView.setText("");
@@ -1132,7 +1132,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime2().equals("11:00")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1100TextView.setText("");
@@ -1143,7 +1143,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime2().equals("13:00")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1300TextView.setText("");
@@ -1154,7 +1154,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime2().equals("14:30")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1430TextView.setText("");
@@ -1165,7 +1165,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime2().equals("16:00")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1600TextView.setText("");
@@ -1176,7 +1176,7 @@ public class ScheduleFragment extends Fragment {
                 wednesday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getWednesdayStartTime2().equals("17:30")) {
+        if (course.getWednesdayStartTime2() != null && course.getWednesdayStartTime2().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 wednesday1730TextView.setText("");
@@ -1255,7 +1255,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        if (course.getThursdayStartTime2().equals("09:30")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday0930TextView.setText("");
@@ -1266,7 +1266,7 @@ public class ScheduleFragment extends Fragment {
                 thursday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime2().equals("11:00")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1100TextView.setText("");
@@ -1277,7 +1277,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime2().equals("13:00")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1300TextView.setText("");
@@ -1288,7 +1288,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime2().equals("14:30")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1430TextView.setText("");
@@ -1299,7 +1299,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime2().equals("16:00")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1600TextView.setText("");
@@ -1310,7 +1310,7 @@ public class ScheduleFragment extends Fragment {
                 thursday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getThursdayStartTime2().equals("17:30")) {
+        if (course.getThursdayStartTime2() != null && course.getThursdayStartTime2().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 thursday1730TextView.setText("");
@@ -1389,7 +1389,7 @@ public class ScheduleFragment extends Fragment {
             }
         }
 
-        if (course.getFridayStartTime2().equals("09:30")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("09:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday0930TextView.setText("");
@@ -1400,7 +1400,7 @@ public class ScheduleFragment extends Fragment {
                 friday0930TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime2().equals("11:00")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("11:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1100TextView.setText("");
@@ -1411,7 +1411,7 @@ public class ScheduleFragment extends Fragment {
                 friday1100TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime2().equals("13:00")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("13:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1300TextView.setText("");
@@ -1422,7 +1422,7 @@ public class ScheduleFragment extends Fragment {
                 friday1300TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime2().equals("14:30")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("14:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1430TextView.setText("");
@@ -1433,7 +1433,7 @@ public class ScheduleFragment extends Fragment {
                 friday1430TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime2().equals("16:00")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("16:00")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1600TextView.setText("");
@@ -1444,7 +1444,7 @@ public class ScheduleFragment extends Fragment {
                 friday1600TextView.setBackgroundResource(R.drawable.cell_background_orange); // 주황색 배경
             }
         }
-        if (course.getFridayStartTime2().equals("17:30")) {
+        if (course.getFridayStartTime2() != null && course.getFridayStartTime2().equals("17:30")) {
             if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
                 // 강의 정보가 없으면 해당 시간표 초기화
                 friday1730TextView.setText("");
