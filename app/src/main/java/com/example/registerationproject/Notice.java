@@ -5,11 +5,21 @@ public class Notice {
     String notice;
     String name;
     String date;
+    String url;
 
-    public Notice(String notice, String name, String date) {
+    public Notice(String notice, String name, String date,String url) {
         this.notice = notice;
         this.name = name;
         this.date = date;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getNotice() {

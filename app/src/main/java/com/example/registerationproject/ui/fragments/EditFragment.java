@@ -106,14 +106,14 @@ public class EditFragment extends Fragment {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(getContext(), "메모가 수정되었습니다.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "게시글이 수정되었습니다.", Toast.LENGTH_SHORT).show();
                                             requireActivity().getSupportFragmentManager().popBackStack();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(getContext(), "메모 수정에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "게시글 수정에 실패했습니다.", Toast.LENGTH_SHORT).show();
                                         }
                                     });
                         }
@@ -122,7 +122,7 @@ public class EditFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "메모 수정에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "게시글 수정에 실패했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -148,14 +148,14 @@ public class EditFragment extends Fragment {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(getContext(), "메모가 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "게시글이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
                                             requireActivity().getSupportFragmentManager().popBackStack();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(getContext(), "메모 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "게시글 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
                                         }
                                     });
                         }
@@ -164,7 +164,7 @@ public class EditFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "메모 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "게시글 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

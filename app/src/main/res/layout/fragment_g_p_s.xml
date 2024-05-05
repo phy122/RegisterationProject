@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="8dp">
+        android:paddingLeft="3dp">
         <Button
             android:id="@+id/btnmark1"
             android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/onemobile"
             android:textColor="@color/_bg_______ek2_color"
-            android:text="경삼관(도서관)"/>
+            android:text="경삼관"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

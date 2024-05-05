@@ -118,4 +118,6 @@ public class CommunityFragment extends Fragment {
                     Toast.makeText(requireContext(), "Failed to add post to Firestore", Toast.LENGTH_SHORT).show();
                 });
     }
+
+
 }

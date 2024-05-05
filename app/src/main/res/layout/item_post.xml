@@ -62,12 +62,12 @@
             android:id="@+id/button_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="320dp"
-            android:fontFamily="@font/onemobile"
             android:background="@drawable/button_likes"
-            android:textColor="#494747"
+            android:fontFamily="@font/onemobile"
             android:text="공감"
-            android:layout_gravity="center"/>
+            android:textColor="#494747" />
 
     </LinearLayout>
 
