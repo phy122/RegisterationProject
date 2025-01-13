@@ -44,11 +44,21 @@
 
 | 시스템 흐름도 | 설계도 |
 |:-------------:|:------:|
-| ![시스템 흐름도](https://github.com/user-attachments/assets/f0f451cd-629b-49b9-880d-b924e171e7ec) | ![설계도](https://github.com/user-attachments/assets/f0f451cd-629b-49b9-880d-b924e171e7ec) |
+| ![시스템 흐름도](https://github.com/user-attachments/assets/f0f451cd-629b-49b9-880d-b924e171e7ec) | ![액티비티 및 프래그먼트 관계도](https://github.com/user-attachments/assets/7dbf8099-4f96-4501-8a14-9ad9490cb474)
+ 
 
 </div>
 
 <br/>
+
+## 👥 팀 구성
+
+| **이름**   | **역할 및 담당**                                      |
+|------------|-------------------------------------------------------|
+| **박호영** | 어플리케이션 구축 및 설계, Firebase를 이용한 DB 설계 |
+| **이찬우** | UI/UX 디자인 설계                                     |
+
+
 
 ## ⭐ 주요 기능
 - **로그인/회원가입** : 사용자는 개인정보를 입력하여 회원가입을 진행하고, 로그인을 한다.
