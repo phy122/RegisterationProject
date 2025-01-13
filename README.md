@@ -1,5 +1,6 @@
-<p align="middle" >
-  <img width="200px;" src="https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/logo.jpg?alt=media&token=46aada62-533c-4ee0-8b0a-c454d033733f"/>
+<p align="center">
+  <img width="200px" src="https://github.com/user-attachments/assets/ab1381c6-a341-41e3-9a19-0193fb068f81" />
+</p>
 </p>
 <h1 align="middle">한신알림</h1>
 <h3 align="middle">안드로이드 기반의 수강신청 어플리케이션</h3>
@@ -52,39 +53,71 @@
 ## ⭐ 주요 기능
 - **로그인/회원가입** : 사용자는 개인정보를 입력하여 회원가입을 진행하고, 로그인을 한다.
 
-![메인페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.32.09.png?alt=media&token=b2d5b84a-eaf0-4f57-9e82-0dda2ee080cb)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7d40fe2a-9494-49ab-864a-f4b0e28924ee" width="500">
+</p>
+
 
 - **메인화면** : 관심이 있는 공지사항을 클릭하면 연결된 URL을 통해 웹 사이트로 이동한다.
 
-![선택페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/Image%2Fselect.png?alt=media&token=05794943-9657-40bf-ad36-d3bdbb895d84)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f641cadb-d58f-441c-998a-74ab1d58c345" width="500">
+</p>
+
 
 - **강의 목록 화면** : 데이터를 선택하여 강의를 찾을 수 있다. 시간표 추가 버튼을 눌러 강의를 시간표에 추가할 수 있다.
 
-![미리보기](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.52.47.png?alt=media&token=7502d5f5-a3c3-4193-a873-620747b7b070)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5f02d9c-5bf3-4f4a-8637-969e96afa90c" width="500">
+</p>
+
 
 - **시간표 화면** : 강의 목록 화면에서 추가한 강의를 시간표로 볼 수 있다.
 
-![제작페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.53.28.png?alt=media&token=83162f3e-0802-4c65-863e-e907ca6979b3)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/32ae0a58-4f13-473c-81f4-83cd5e9c9b26" width="250">
+</p>
+
 
 - **강의 분석 화면** : 강의의 경쟁률과 정보를 볼 수 있는 화면이 나온다. 삭제 버튼을 누르면 삭제가 가능하다.
 
-![저장페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.54.47.png?alt=media&token=015f9d34-ed1f-4017-8de3-832fb026e0a2)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b99dc55d-8293-4ea5-9a41-0c9b4d3ab400" width="250">
+</p>
+
 
 - **캘린더 화면** : 달력을 통해 일정을 등록할 수 있다. 일정을 수정하고 삭제할 수 있다.
 
-![검색페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.55.21.png?alt=media&token=31460bdc-5cba-4274-a38c-e5a87566aecd)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b55a1820-eb97-4239-b2bc-a9ebace216a9" width="500">
+</p>
+
 
 - **커뮤니티 화면** : 게시글 등록, 수정, 삭제가 가능하다.
 
-![로그인](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.38.38.png?alt=media&token=5e34c62b-f65b-469f-84fc-dca665bd96bc)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9e29f9fd-13d8-4627-940a-961e58cc9827" width="500">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/01a5b0c1-0340-4060-a631-66114e49be0c" width="250">
+</p>
+
 
 - **위치 정보 화면** : 사용자의 현재 위치가 나오고 건물 이름 버튼을 누르면 마커가 표시된다. 지도에 표시된 마커를 누르면 건물 정조가 담긴 다이얼로그 창이 나온다.
 
-![마이페이지](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.46.10.png?alt=media&token=f6ba20e7-9aa8-440e-9bcf-021f0bd07490)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/102dd45b-c6dc-4f4b-8017-99fbab7d0b90" width="500">
+</p>
+
 
 <br/>
 
-## 🔨 프로젝트 구조
-![아키텍처](https://firebasestorage.googleapis.com/v0/b/fir-readme-storage.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-06-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.19.37.png?alt=media&token=79093ff3-9c0a-40fd-8721-f0fa54625694)
+## 종합 평가
+이 수강신청 어플리케이션은 학생들의 시간표 관리를 혁신적으로 개선하는 데 중요한 역할을 수행한다.<br/>
+
+개인의 일정을 간편하게 관리할 수 있는 기능을 제공한다 사용자들은 강의 정보를 확인하고 자신의 시간표를 손쉽게 작성할 수 있어 학업 및 일상생활을 조율하는 데 큰 도움을 준다. <br/>
+
+커뮤니티 기능을 통해 사용자들은 그룹 내에서 소통하고 정보를 공유할 수 있다 이를 통해 학생들은 서로의 경험과 지식을 나누며 학습 공동체를 형성할 수 있다.
+
 
 <br/>
